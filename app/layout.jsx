@@ -1,5 +1,6 @@
 import { theme } from "../theme";
 import { ThemeProvider } from "@mui/material";
+import { gmarket } from "../font/font";
 
 export const metadata = {
   title: "이음",
@@ -10,7 +11,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <ThemeProvider theme={theme}>
-        <body>{children}</body>
+        <body>
+          <div className={`${gmarket.variable}`}>{children}</div>
+        </body>
       </ThemeProvider>
     </html>
   );
