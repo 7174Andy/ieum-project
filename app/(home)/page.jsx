@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import Image from "next/image";
 import Logo from "../../public/images/main-character.png";
+import LogoText from "../../public/images/logo.png";
 
 export default function Home() {
   return (
@@ -15,7 +18,7 @@ export default function Home() {
         gap: "1.5rem",
       }}
     >
-      <Typography variant="h1">이음</Typography>
+      <Image src={LogoText} width={180} height={90} />
       <Image src={Logo} width={300} height={300} />
       <Box
         sx={{
