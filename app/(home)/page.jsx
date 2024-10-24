@@ -11,7 +11,6 @@ import Ribbon from "../../public/images/ribbon.png";
 
 export default function Home() {
   const [search, setSearch] = useState(false);
-  const [use, setUse] = useState(false);
 
   return (
     <Box
@@ -53,17 +52,9 @@ export default function Home() {
             }}
           >
             <SearchBar />
-            <Button onClick={() => setSearch(false)}>뒤로</Button>
-          </Box>
-        ) : use ? (
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "1rem",
-            }}
-          >
-            Search
+            <Button onClick={() => setSearch(false)}>
+              <Typography>뒤로</Typography>
+            </Button>
           </Box>
         ) : (
           <>
