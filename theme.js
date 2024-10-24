@@ -10,6 +10,10 @@ export const theme = createTheme({
     secondary: {
       main: "#f50057",
     },
+    border: {
+      main: "#50AEC3",
+      background: "#DCEFF3",
+    },
   },
   typography: {
     fontFamily: "var(--font-gmarket)",
