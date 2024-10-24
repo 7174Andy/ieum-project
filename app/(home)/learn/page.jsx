@@ -55,6 +55,22 @@ export default function LearnPage() {
           </Typography>
         </Box>
       </Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "1rem",
+          width: "100%",
+          border: `0.5px solid ${theme.palette.border.main}`,
+          background: "white",
+          borderRadius: "1rem",
+          width: "85%",
+          py: "1rem",
+          px: "0.8rem",
+        }}
+      >
+        <Typography>실제 보여지는 크기입니다</Typography>
+      </Box>
     </Box>
   );
 }
