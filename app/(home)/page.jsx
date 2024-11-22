@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Box, Typography, Button } from "@mui/material";
+import { useRouter } from "next/navigation";
 import SearchBar from "../../components/search-bar";
 
 import Image from "next/image";
@@ -11,6 +12,7 @@ import Ribbon from "../../public/images/ribbon.png";
 
 export default function Home() {
   const [search, setSearch] = useState(false);
+  const router = useRouter();
 
   return (
     <Box
@@ -85,6 +87,7 @@ export default function Home() {
                 py: "1rem",
                 borderRadius: "1rem",
               }}
+              onClick={() => router.push("/learn")}
             >
               <Typography
                 variant="h6"
