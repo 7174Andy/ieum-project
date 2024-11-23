@@ -69,7 +69,23 @@ export default function LearnPage() {
           px: "0.8rem",
         }}
       >
-        <Typography>실제 보여지는 크기입니다</Typography>
+        <Typography>실제 보여지는 크기 입니다</Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+            width: "100%",
+            background: `${theme.palette.border.backgroundDark}`,
+            background: "white",
+            borderRadius: "1rem",
+            width: "85%",
+            py: "1rem",
+            px: "0.8rem",
+          }}
+        >
+          <Typography>안녕하세요. 이음입니다. </Typography>
+        </Box>
       </Box>
     </Box>
   );
