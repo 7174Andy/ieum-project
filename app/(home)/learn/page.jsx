@@ -1,12 +1,25 @@
 "use client";
 
 import React from "react";
-import { Box, TextField, Button, Typography } from "@mui/material";
+import {
+  Box,
+  Select,
+  Typography,
+  FormControl,
+  InputLabel,
+  MenuItem,
+} from "@mui/material";
 import Image from "next/image";
 import Character from "../../../public/images/character-how-to.png";
 import { theme } from "../../../theme";
 
 export default function LearnPage() {
+  const [fontSize, setFontSize] = React.useState("");
+
+  const handleChange = (event) => {
+    setFontSize(event.target.value);
+  };
+
   return (
     <Box
       sx={{
@@ -77,8 +90,6 @@ export default function LearnPage() {
             gap: "1rem",
             width: "100%",
             background: `${theme.palette.border.backgroundDark}`,
-            background: "white",
-            borderRadius: "1rem",
             width: "85%",
             py: "1rem",
             px: "0.8rem",
@@ -86,6 +97,23 @@ export default function LearnPage() {
         >
           <Typography>안녕하세요. 이음입니다. </Typography>
         </Box>
+        <FormControl fullWidth>
+          <InputLabel id="font-size-label">글자 크기</InputLabel>
+          <Select
+            labelId="font-size-label"
+            id="font-size"
+            sx={{
+              width: "100%",
+              border: `0.5px solid ${theme.palette.border.main}`,
+            }}
+            value={fontSize}
+            onChange={handleChange}
+            label="글자 크기"
+          >
+            <MenuItem value={24}>24</MenuItem>
+            <MenuItem value={30}>30</MenuItem>
+          </Select>
+        </FormControl>
       </Box>
     </Box>
   );
