@@ -13,6 +13,14 @@ export default function LearnPage() {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
 
+  const handleBack = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    } else {
+      router.push("/");
+    }
+  };
+
   return (
     <>
       <Box
@@ -62,13 +70,11 @@ export default function LearnPage() {
             </Typography>
           </Box>
         </Box>
-        <Learn1 />
+        {currentPage === 1 && (
+          <Learn1 currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        )}
       </Box>
-      <Button
-        sx={{ color: "white" }}
-        variant="contained"
-        onClick={() => router.push("/")}
-      >
+      <Button sx={{ color: "white" }} variant="contained" onClick={handleBack}>
         뒤로가기
       </Button>
     </>

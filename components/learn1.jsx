@@ -11,7 +11,6 @@ import {
   Button,
   styled,
 } from "@mui/material";
-import { useRouter } from "next/navigation";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import { theme } from "../theme";
@@ -25,9 +24,8 @@ const SizeButton = styled(Button)({
   },
 });
 
-export default function Learn1() {
+export default function Learn1({ currentPage, setCurrentPage }) {
   const [fontSize, setFontSize] = useState(16);
-  const router = useRouter();
 
   const handleChange = (event) => {
     setFontSize(event.target.value);
@@ -129,7 +127,7 @@ export default function Learn1() {
         <Typography>
           손가락으로 넘기거나 화살표를 누르면 다음 화면으로 넘어갑니다.
         </Typography>
-        <ArrowForwardIcon onClick={() => router.push("/")} />
+        <ArrowForwardIcon onClick={() => setCurrentPage(currentPage + 1)} />
       </Box>
     </>
   );
