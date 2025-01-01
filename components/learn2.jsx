@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Box, Typography, Button, styled } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import RepeatIcon from "@mui/icons-material/Repeat";

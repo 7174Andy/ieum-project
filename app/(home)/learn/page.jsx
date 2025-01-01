@@ -10,6 +10,7 @@ import Character from "../../../public/images/character-how-to.png";
 import { theme } from "../../../theme";
 import Learn1 from "../../../components/learn1";
 import Learn2 from "../../../components/learn2";
+import Learn3 from "../../../components/learn3";
 
 export default function LearnPage() {
   const router = useRouter();
@@ -102,6 +103,13 @@ export default function LearnPage() {
         )}
         {currentPage === 2 && (
           <Learn2
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            setCurrTitle={setCurrTitle}
+          />
+        )}
+        {currentPage === 3 && (
+          <Learn3
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             setCurrTitle={setCurrTitle}
