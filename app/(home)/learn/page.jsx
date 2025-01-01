@@ -4,14 +4,17 @@ import React, { useState } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useSwipeable } from "react-swipeable";
 
 import Character from "../../../public/images/character-how-to.png";
 import { theme } from "../../../theme";
 import Learn1 from "../../../components/learn1";
+import Learn2 from "../../../components/learn2";
 
 export default function LearnPage() {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
+  const [currTitle, setCurrTitle] = useState("글자 크기 조정");
 
   const handleBack = () => {
     if (currentPage > 1) {
@@ -19,7 +22,24 @@ export default function LearnPage() {
     } else {
       router.push("/");
     }
+    if (currentPage === 1) {
+      setCurrTitle("글자 크기 조정");
+    } else {
+      setCurrTitle("이음 사용 방법");
+    }
   };
+
+  const handleNext = () => {
+    setCurrTitle("이음 사용 방법");
+    setCurrentPage(currentPage + 1);
+  };
+
+  const handlers = useSwipeable({
+    onSwipedLeft: () => handleNext(),
+    onSwipedRight: () => handleBack(),
+    trackTouch: true,
+    preventScrollOnSwipe: true,
+  });
 
   return (
     <>
@@ -34,6 +54,7 @@ export default function LearnPage() {
           p: "1rem",
           backgroundColor: `${theme.palette.border.background}`,
         }}
+        {...handlers}
       >
         <Box
           sx={{
@@ -58,20 +79,33 @@ export default function LearnPage() {
                 fontWeight: 500,
               }}
             >
-              글자 크기 조정
+              {currTitle}
             </Typography>
-            <Typography
-              sx={{
-                fontSize: "0.8rem",
-                color: "gray",
-              }}
-            >
-              먼저 하단의 조절버튼을 활용해 글자크기를 조정해주세요
-            </Typography>
+            {currentPage === 1 && (
+              <Typography
+                sx={{
+                  fontSize: "0.8rem",
+                  color: "gray",
+                }}
+              >
+                먼저 하단의 조절버튼을 활용해 글자크기를 조정해주세요
+              </Typography>
+            )}
           </Box>
         </Box>
         {currentPage === 1 && (
-          <Learn1 currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          <Learn1
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            setCurrTitle={setCurrTitle}
+          />
+        )}
+        {currentPage === 2 && (
+          <Learn2
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            setCurrTitle={setCurrTitle}
+          />
         )}
       </Box>
       <Button sx={{ color: "white" }} variant="contained" onClick={handleBack}>

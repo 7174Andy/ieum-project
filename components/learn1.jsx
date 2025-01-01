@@ -24,11 +24,16 @@ const SizeButton = styled(Button)({
   },
 });
 
-export default function Learn1({ currentPage, setCurrentPage }) {
+export default function Learn1({ currentPage, setCurrentPage, setCurrTitle }) {
   const [fontSize, setFontSize] = useState(16);
 
   const handleChange = (event) => {
     setFontSize(event.target.value);
+  };
+
+  const handleNext = () => {
+    setCurrTitle("이음 사용 방법");
+    setCurrentPage(currentPage + 1);
   };
 
   return (
@@ -127,7 +132,7 @@ export default function Learn1({ currentPage, setCurrentPage }) {
         <Typography>
           손가락으로 넘기거나 화살표를 누르면 다음 화면으로 넘어갑니다.
         </Typography>
-        <ArrowForwardIcon onClick={() => setCurrentPage(currentPage + 1)} />
+        <ArrowForwardIcon onClick={handleNext} />
       </Box>
     </>
   );
