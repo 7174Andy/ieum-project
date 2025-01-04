@@ -1,12 +1,9 @@
-import React from "react";
-import { Box, Typography, Button, Divider } from "@mui/material";
+import { Box, Typography, Button, styled } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import Image from "next/image";
 
 import { theme } from "../theme";
-import ScreenShot from "../public/images/font-size-screenshot.png";
 
-export default function Learn3({ currentPage, setCurrentPage, setCurrTitle }) {
+export default function Learn4({ currentPage, setCurrentPage, setCurrTitle }) {
   const handleNext = () => {
     setCurrTitle("이음 사용 방법");
     setCurrentPage(currentPage + 1);
@@ -26,15 +23,14 @@ export default function Learn3({ currentPage, setCurrentPage, setCurrTitle }) {
           width: "85%",
           py: "1rem",
           px: "0.8rem",
+          paddingBottom: "5rem",
         }}
       >
-        <Typography sx={{ color: "#FF0000" }}>방법 02.</Typography>
-        <Typography sx={{ fontWeight: "bold" }}>글자크기 조정</Typography>
-        <Typography>글자 크기는 여기서 조정할 수 있습니다.</Typography>
-        <Divider />
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
-          <Image src={ScreenShot} width={250} />
-        </Box>
+        <Typography sx={{ color: "#FF0000" }}>방법 03.</Typography>
+        <Typography sx={{ fontWeight: "bold" }}>화살표 누르기</Typography>
+        <Typography>안내중, 다음 단계로 넘어가고 싶으신가요?</Typography>
+        <Typography>1. 우측 상단에 있는 화살표를 눌러주시거나</Typography>
+        <Typography>2. 손가락으로 화면을 넘겨주세요.</Typography>
       </Box>
       <Box sx={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
         <Typography>

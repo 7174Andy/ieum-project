@@ -11,6 +11,7 @@ import { theme } from "../../../theme";
 import Learn1 from "../../../components/learn1";
 import Learn2 from "../../../components/learn2";
 import Learn3 from "../../../components/learn3";
+import Learn4 from "../../../components/learn4";
 
 export default function LearnPage() {
   const router = useRouter();
@@ -110,6 +111,13 @@ export default function LearnPage() {
         )}
         {currentPage === 3 && (
           <Learn3
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            setCurrTitle={setCurrTitle}
+          />
+        )}
+        {currentPage === 4 && (
+          <Learn4
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             setCurrTitle={setCurrTitle}
