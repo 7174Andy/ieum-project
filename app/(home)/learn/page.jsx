@@ -34,6 +34,9 @@ export default function LearnPage() {
   const handleNext = () => {
     setCurrTitle("이음 사용 방법");
     setCurrentPage(currentPage + 1);
+    if (currentPage === 4) {
+      router.push("/");
+    }
   };
 
   const handlers = useSwipeable({
@@ -100,6 +103,7 @@ export default function LearnPage() {
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             setCurrTitle={setCurrTitle}
+            handleNext={handleNext}
           />
         )}
         {currentPage === 2 && (
@@ -107,6 +111,7 @@ export default function LearnPage() {
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             setCurrTitle={setCurrTitle}
+            handleNext={handleNext}
           />
         )}
         {currentPage === 3 && (
@@ -114,13 +119,15 @@ export default function LearnPage() {
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             setCurrTitle={setCurrTitle}
+            handleNext={handleNext}
           />
         )}
-        {currentPage === 4 && (
+        {currentPage >= 4 && (
           <Learn4
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}
             setCurrTitle={setCurrTitle}
+            handleNext={handleNext}
           />
         )}
       </Box>

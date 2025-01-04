@@ -5,12 +5,12 @@ import RepeatIcon from "@mui/icons-material/Repeat";
 
 import { theme } from "../theme";
 
-export default function Learn2({ currentPage, setCurrentPage, setCurrTitle }) {
-  const handleNext = () => {
-    setCurrTitle("이음 사용 방법");
-    setCurrentPage(currentPage + 1);
-  };
-
+export default function Learn2({
+  currentPage,
+  setCurrentPage,
+  setCurrTitle,
+  handleNext,
+}) {
   return (
     <>
       <Box

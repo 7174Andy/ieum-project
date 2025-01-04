@@ -3,12 +3,12 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import { theme } from "../theme";
 
-export default function Learn4({ currentPage, setCurrentPage, setCurrTitle }) {
-  const handleNext = () => {
-    setCurrTitle("이음 사용 방법");
-    setCurrentPage(currentPage + 1);
-  };
-
+export default function Learn4({
+  currentPage,
+  setCurrentPage,
+  setCurrTitle,
+  handleNext,
+}) {
   return (
     <>
       <Box

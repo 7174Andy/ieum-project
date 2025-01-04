@@ -6,12 +6,12 @@ import Image from "next/image";
 import { theme } from "../theme";
 import ScreenShot from "../public/images/font-size-screenshot.png";
 
-export default function Learn3({ currentPage, setCurrentPage, setCurrTitle }) {
-  const handleNext = () => {
-    setCurrTitle("이음 사용 방법");
-    setCurrentPage(currentPage + 1);
-  };
-
+export default function Learn3({
+  currentPage,
+  setCurrentPage,
+  setCurrTitle,
+  handleNext,
+}) {
   return (
     <>
       <Box
