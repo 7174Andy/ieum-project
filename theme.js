@@ -44,6 +44,10 @@ export const createCustomTheme = (fontSize) => {
         fontWeight: 700,
       },
       body1: {
+        fontSize: fontSize,
+        fontWeight: 500,
+      },
+      body2: {
         fontSize: fontSize * 0.75,
         fontWeight: 500,
       },

@@ -1,8 +1,16 @@
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, Slider, styled } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import RepeatIcon from "@mui/icons-material/Repeat";
 import { useTheme } from "@mui/material/styles";
+import StopIcon from "@mui/icons-material/Stop";
+
+const TinyText = styled(Typography)({
+  fontSize: "0.75rem",
+  opacity: 0.38,
+  fontWeight: 500,
+  letterSpacing: 0.2,
+});
 
 export default function Learn2({ handleNext }) {
   const theme = useTheme();
@@ -74,6 +82,58 @@ export default function Learn2({ handleNext }) {
             <PlayArrowIcon />
             재생
           </Button>
+          <Button
+            sx={{
+              color: "white",
+              background: "#529DAD",
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.5rem",
+              borderRadius: "0",
+            }}
+            variant="contained"
+          >
+            <StopIcon />
+            정지
+          </Button>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              width: "100%",
+            }}
+          >
+            <TinyText>0:15</TinyText>
+            <TinyText>0:30</TinyText>
+          </Box>
+          <Slider
+            defaultValue={30}
+            size="small"
+            sx={{
+              width: "80%",
+              color: "#529DAD",
+              "& .MuiSlider-thumb": {
+                backgroundColor: "#529DAD",
+              },
+              "& .MuiSlider-track": {
+                backgroundColor: "#529DAD",
+              },
+              "&::before": {
+                backgroundColor: "#529DAD",
+              },
+            }}
+          />
         </Box>
       </Box>
 

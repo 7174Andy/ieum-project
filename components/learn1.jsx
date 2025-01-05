@@ -83,9 +83,7 @@ export default function Learn1({ currentPage, setCurrentPage, setCurrTitle }) {
             onChange={handleChange}
             label="글자 크기"
           >
-            <MenuItem value={16}>
-              <Typography>16</Typography>
-            </MenuItem>
+            <MenuItem value={16}>16</MenuItem>
             <MenuItem value={22}>22</MenuItem>
             <MenuItem value={28}>28</MenuItem>
             <MenuItem value={34}>34</MenuItem>
@@ -132,7 +130,7 @@ export default function Learn1({ currentPage, setCurrentPage, setCurrTitle }) {
         </Box>
       </Box>
       <Box sx={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
-        <Typography>
+        <Typography variant="body1" sx={{ color: "gray" }}>
           손가락으로 넘기거나 화살표를 누르면 다음 화면으로 넘어갑니다.
         </Typography>
         <ArrowForwardIcon onClick={handleNext} />
