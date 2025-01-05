@@ -1,6 +1,5 @@
-import { theme } from "../theme";
-import { ThemeProvider } from "@mui/material";
 import { gmarket } from "../font/font";
+import ThemeContextProvider from "../components/ThemeContext";
 
 export const metadata = {
   title: "이음",
@@ -28,11 +27,11 @@ export default function RootLayout({ children }) {
         href="/favicon/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
-      <ThemeProvider theme={theme}>
+      <ThemeContextProvider>
         <body>
           <div className={`${gmarket.variable}`}>{children}</div>
         </body>
-      </ThemeProvider>
+      </ThemeContextProvider>
     </html>
   );
 }

@@ -2,15 +2,11 @@ import { Box, Typography, Button } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import RepeatIcon from "@mui/icons-material/Repeat";
+import { useTheme } from "@mui/material/styles";
 
-import { theme } from "../theme";
+export default function Learn2({ handleNext }) {
+  const theme = useTheme();
 
-export default function Learn2({
-  currentPage,
-  setCurrentPage,
-  setCurrTitle,
-  handleNext,
-}) {
   return (
     <>
       <Box

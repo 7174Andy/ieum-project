@@ -5,9 +5,9 @@ import { Box, Typography, Button } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useSwipeable } from "react-swipeable";
+import { useTheme } from "@mui/material/styles";
 
 import Character from "../../../public/images/character-how-to.png";
-import { theme } from "../../../theme";
 import Learn1 from "../../../components/learn1";
 import Learn2 from "../../../components/learn2";
 import Learn3 from "../../../components/learn3";
@@ -17,6 +17,7 @@ export default function LearnPage() {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
   const [currTitle, setCurrTitle] = useState("글자 크기 조정");
+  const theme = useTheme();
 
   const handleBack = () => {
     if (currentPage > 1) {
@@ -24,7 +25,7 @@ export default function LearnPage() {
     } else {
       router.push("/");
     }
-    if (currentPage === 1) {
+    if (currentPage - 1 === 1) {
       setCurrTitle("글자 크기 조정");
     } else {
       setCurrTitle("이음 사용 방법");
@@ -79,8 +80,8 @@ export default function LearnPage() {
             }}
           >
             <Typography
+              variant="h3"
               sx={{
-                fontSize: "1rem",
                 fontWeight: 500,
               }}
             >
@@ -88,8 +89,8 @@ export default function LearnPage() {
             </Typography>
             {currentPage === 1 && (
               <Typography
+                variant="body1"
                 sx={{
-                  fontSize: "0.8rem",
                   color: "gray",
                 }}
               >
@@ -106,30 +107,9 @@ export default function LearnPage() {
             handleNext={handleNext}
           />
         )}
-        {currentPage === 2 && (
-          <Learn2
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-            setCurrTitle={setCurrTitle}
-            handleNext={handleNext}
-          />
-        )}
-        {currentPage === 3 && (
-          <Learn3
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-            setCurrTitle={setCurrTitle}
-            handleNext={handleNext}
-          />
-        )}
-        {currentPage >= 4 && (
-          <Learn4
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-            setCurrTitle={setCurrTitle}
-            handleNext={handleNext}
-          />
-        )}
+        {currentPage === 2 && <Learn2 handleNext={handleNext} />}
+        {currentPage === 3 && <Learn3 handleNext={handleNext} />}
+        {currentPage >= 4 && <Learn4 handleNext={handleNext} />}
       </Box>
       <Button sx={{ color: "white" }} variant="contained" onClick={handleBack}>
         뒤로가기

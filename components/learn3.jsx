@@ -2,16 +2,13 @@ import React from "react";
 import { Box, Typography, Button, Divider } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Image from "next/image";
+import { useTheme } from "@mui/material/styles";
 
-import { theme } from "../theme";
 import ScreenShot from "../public/images/font-size-screenshot.png";
 
-export default function Learn3({
-  currentPage,
-  setCurrentPage,
-  setCurrTitle,
-  handleNext,
-}) {
+export default function Learn3({ handleNext }) {
+  const theme = useTheme();
+
   return (
     <>
       <Box

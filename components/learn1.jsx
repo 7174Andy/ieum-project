@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import {
   Box,
   Typography,
@@ -12,8 +12,8 @@ import {
   styled,
 } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-
-import { theme } from "../theme";
+import { ThemeContext } from "./ThemeContext";
+import { useTheme } from "@mui/material/styles";
 
 const SizeButton = styled(Button)({
   backgroundColor: "#529DAD",
@@ -25,10 +25,11 @@ const SizeButton = styled(Button)({
 });
 
 export default function Learn1({ currentPage, setCurrentPage, setCurrTitle }) {
-  const [fontSize, setFontSize] = useState(16);
+  const { fontSize, setFontSize } = useContext(ThemeContext);
+  const theme = useTheme();
 
   const handleChange = (event) => {
-    setFontSize(event.target.value);
+    setFontSize(Number(event.target.value));
   };
 
   const handleNext = () => {
@@ -82,7 +83,9 @@ export default function Learn1({ currentPage, setCurrentPage, setCurrTitle }) {
             onChange={handleChange}
             label="글자 크기"
           >
-            <MenuItem value={16}>16</MenuItem>
+            <MenuItem value={16}>
+              <Typography>16</Typography>
+            </MenuItem>
             <MenuItem value={22}>22</MenuItem>
             <MenuItem value={28}>28</MenuItem>
             <MenuItem value={34}>34</MenuItem>
