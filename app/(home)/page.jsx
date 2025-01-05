@@ -12,6 +12,7 @@ import Ribbon from "../../public/images/ribbon.png";
 
 export default function Home() {
   const [search, setSearch] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
   const router = useRouter();
 
   return (
@@ -53,7 +54,11 @@ export default function Home() {
               gap: "1rem",
             }}
           >
-            <SearchBar />
+            <SearchBar
+              setSearch={setSearchValue}
+              search={searchValue}
+              router={router}
+            />
             <Button onClick={() => setSearch(false)}>
               <Typography>뒤로</Typography>
             </Button>

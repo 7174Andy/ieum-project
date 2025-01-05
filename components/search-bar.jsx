@@ -1,7 +1,43 @@
-import React from "react";
-import { Box, TextField, Button } from "@mui/material";
+"use client";
 
-export default function SearchBar() {
+import React from "react";
+import { Box, Button, Autocomplete, TextField } from "@mui/material";
+import { useRouter } from "next/router";
+
+const options = [
+  "카카오톡",
+  "안드로이드",
+  "카카오페이",
+  "플레이 스토어",
+  "카카오 택시",
+];
+
+export default function SearchBar({ search, setSearch, router }) {
+  const handleSearch = () => {
+    console.log(search);
+    if (search) {
+      switch (search) {
+        case "카카오톡":
+          router.push("/kakao");
+          break;
+        case "안드로이드":
+          router.push("/android");
+          break;
+        case "카카오페이":
+          router.push("/kakaopay");
+          break;
+        case "플레이 스토어":
+          router.push("/playstore");
+          break;
+        case "카카오 택시":
+          router.push("/kakaotaxi");
+          break;
+        default:
+          break;
+      }
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -11,9 +47,14 @@ export default function SearchBar() {
         width: "100%",
       }}
     >
-      <TextField
-        label="궁금하신 어플을 검색해 주세요"
+      <Autocomplete
+        renderInput={(params) => (
+          <TextField {...params} label="궁금하신 어플을 검색해 주세요" />
+        )}
         variant="outlined"
+        disablePortal
+        options={options}
+        onChange={(event, value) => setSearch(value)}
         sx={{
           borderRadius: "1rem",
         }}
@@ -24,6 +65,7 @@ export default function SearchBar() {
         sx={{
           borderRadius: "1rem",
         }}
+        onClick={handleSearch}
       >
         검색
       </Button>
