@@ -12,6 +12,15 @@ const TinyText = styled(Typography)({
   letterSpacing: 0.2,
 });
 
+const PlaySpeedButton = styled(Button)({
+  backgroundColor: "#529DAD",
+  padding: "0.4rem 0.35rem",
+  color: "white",
+  "&:active": {
+    backgroundColor: "#529DAD",
+  },
+});
+
 export default function Learn2({ handleNext }) {
   const theme = useTheme();
 
@@ -111,7 +120,7 @@ export default function Learn2({ handleNext }) {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
-              width: "100%",
+              width: "90%",
             }}
           >
             <TinyText>0:15</TinyText>
@@ -124,16 +133,37 @@ export default function Learn2({ handleNext }) {
               width: "80%",
               color: "#529DAD",
               "& .MuiSlider-thumb": {
+                height: "10px",
+                width: "10px",
                 backgroundColor: "#529DAD",
+                border: "1px solid white",
+                boxShadow: "none",
+                "&.Mui-active": {
+                  height: "17px",
+                  width: "17px",
+                },
               },
               "& .MuiSlider-track": {
+                height: "4px",
                 backgroundColor: "#529DAD",
               },
-              "&::before": {
-                backgroundColor: "#529DAD",
+              "& .MuiSlider-rail": {
+                height: "4px",
+                backgroundColor: "#A2C4C9",
               },
             }}
           />
+        </Box>
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            gap: "1rem",
+          }}
+        >
+          <PlaySpeedButton>0.5X</PlaySpeedButton>
+          <PlaySpeedButton>1X</PlaySpeedButton>
         </Box>
       </Box>
 
