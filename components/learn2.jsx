@@ -61,7 +61,7 @@ export default function Learn2({ handleNext }) {
           alignItems: "center",
         }}
       >
-        <Typography sx={{}}>음성 안내</Typography>
+        <Typography>음성 안내</Typography>
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <Button
             sx={{

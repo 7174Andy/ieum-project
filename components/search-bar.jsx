@@ -1,7 +1,13 @@
 "use client";
 
 import React from "react";
-import { Box, Button, Autocomplete, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  Autocomplete,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { useRouter } from "next/router";
 
 const options = [
@@ -67,7 +73,7 @@ export default function SearchBar({ search, setSearch, router }) {
         }}
         onClick={handleSearch}
       >
-        검색
+        <Typography sx={{ color: "white" }}>검색</Typography>
       </Button>
     </Box>
   );

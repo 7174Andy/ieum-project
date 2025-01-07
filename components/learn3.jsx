@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Button, Divider } from "@mui/material";
+import { Box, Typography, Divider } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Image from "next/image";
 import { useTheme } from "@mui/material/styles";
