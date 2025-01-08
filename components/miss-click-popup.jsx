@@ -7,8 +7,9 @@ import Image from "next/image";
 import CloseIcon from "@mui/icons-material/Close";
 
 import Logo from "../public/images/logo.png";
+import Character from "../public/images/error-character.png";
 
-export default function HelpPopup({ handleClose, open }) {
+export default function MissClickPopup({ handleClose, open }) {
   const theme = useTheme();
 
   return (
@@ -61,23 +62,18 @@ export default function HelpPopup({ handleClose, open }) {
             textAlign: "center",
           }}
         >
-          어플이란?
+          잘못 입력하셨습니다.
         </Typography>
         <Typography
           id="modal-modal-description"
           variant="body1"
           sx={{ mt: 2, color: "#333", textAlign: "center" }}
         >
-          어플은 휴대폰 안에 있는 작은 프로그램으로, 메시지를 보내거나, 날씨를
-          확인하거나, 게임을 하는 등 특정한 일을 도와주는 도구예요.
+          다시 한번 입력해주세요.
         </Typography>
-        <Typography
-          sx={{ mt: 2, color: "#333", textAlign: "center" }}
-          variant="body1"
-        >
-          어플을 사용하려면 화면에 있는 그림(아이콘)을 손가락으로 눌러주기만
-          하면 돼요!
-        </Typography>
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
+          <Image src={Character} width={100} height={100} alt="Character" />
+        </Box>
       </Box>
     </Modal>
   );
