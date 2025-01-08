@@ -28,9 +28,7 @@ export default function RootLayout({ children }) {
       />
       <link rel="manifest" href="/site.webmanifest" />
       <ThemeContextProvider>
-        <body>
-          <div className={`${gmarket.variable}`}>{children}</div>
-        </body>
+        <body className={`${gmarket.variable}`}>{children}</body>
       </ThemeContextProvider>
     </html>
   );
