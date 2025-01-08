@@ -67,7 +67,12 @@ export default function Kakao() {
               </Typography>
             </Button>
             <Button variant="contained" sx={{ flex: 1 }}>
-              <Typography sx={{ color: "white" }}>사진 보내기</Typography>
+              <Typography
+                sx={{ color: "white" }}
+                onClick={() => router.push("/kakao-picture")}
+              >
+                사진 보내기
+              </Typography>
             </Button>
           </Box>
           <Box

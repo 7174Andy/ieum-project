@@ -9,7 +9,7 @@ import Screen from "../public/images/kakao-voice-page-2.png";
 
 import MissClickPopup from "./miss-click-popup";
 
-export default function TalkPage2({ handleNext }) {
+export default function TalkPage2({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -44,9 +44,10 @@ export default function TalkPage2({ handleNext }) {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         height: "100vh",
-        width: "100vw",
+        width: "97vw",
         position: "relative",
       }}
+      {...handlers}
     >
       <Box
         onClick={handleNext}

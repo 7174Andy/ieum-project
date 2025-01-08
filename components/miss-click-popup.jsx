@@ -18,7 +18,6 @@ export default function MissClickPopup({ handleClose, open }) {
       onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
-      container={() => document.body}
     >
       <Box
         sx={{
@@ -26,7 +25,7 @@ export default function MissClickPopup({ handleClose, open }) {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: 200,
+          width: 250,
           backgroundColor: theme.palette.border.background,
           boxShadow: 24,
           p: 4,

@@ -5,11 +5,11 @@ import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../public/images/kakao-voice-page-3.png";
+import Screen from "../public/images/kakao-picture-page-4.png";
 
 import MissClickPopup from "./miss-click-popup";
 
-export default function TalkPage3({ handleNext, handlers }) {
+export default function PicturePage4({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -56,10 +56,9 @@ export default function TalkPage3({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "16%",
-          px: "48%",
-          bottom: "10%",
-          right: "0",
+          p: "3.5%",
+          bottom: "41%",
+          right: "-1%",
         }}
       ></Box>
       <Button

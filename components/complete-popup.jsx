@@ -5,10 +5,17 @@ import { Box, Button, Typography, Modal } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import Image from "next/image";
 import CloseIcon from "@mui/icons-material/Close";
+import { useRouter } from "next/router";
 
 import Logo from "../public/images/logo.png";
+import Character from "../public/images/complete-character.png";
 
-export default function HelpPopup({ handleClose, open }) {
+export default function CompletePopup({
+  handleClose,
+  open,
+  handleAgain,
+  router,
+}) {
   const theme = useTheme();
 
   return (
@@ -60,23 +67,28 @@ export default function HelpPopup({ handleClose, open }) {
             textAlign: "center",
           }}
         >
-          어플이란?
+          잘하셨습니다!
         </Typography>
         <Typography
           id="modal-modal-description"
           variant="body1"
           sx={{ mt: 2, color: "#333", textAlign: "center" }}
         >
-          어플은 휴대폰 안에 있는 작은 프로그램으로, 메시지를 보내거나, 날씨를
-          확인하거나, 게임을 하는 등 특정한 일을 도와주는 도구예요.
+          튜토리얼을 성공적으로 마치셨습니다.
         </Typography>
-        <Typography
-          sx={{ mt: 2, color: "#333", textAlign: "center" }}
-          variant="body1"
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
+          <Image src={Character} width={100} height={100} alt="Character" />
+        </Box>
+        <Box
+          sx={{ display: "flex", justifyContent: "center", gap: "1rem", mt: 2 }}
         >
-          어플을 사용하려면 화면에 있는 그림(아이콘)을 손가락으로 눌러주기만
-          하면 돼요!
-        </Typography>
+          <Button variant="contained" onClick={handleAgain}>
+            다시하기
+          </Button>
+          <Button variant="contained" onClick={() => router.push("/kakao")}>
+            메뉴로
+          </Button>
+        </Box>
       </Box>
     </Modal>
   );

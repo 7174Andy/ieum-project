@@ -11,21 +11,22 @@ import Logo from "../../../public/images/kakao-app-logo.png";
 
 import HelpPopup from "../../../components/help-popup";
 import TalkPage1 from "../../../components/kakao-talk-step1";
-import TalkPage2 from "../../../components/kakao-talk-step2";
-import TalkPage3 from "../../../components/kakao-talk-step3";
+import PicturePage2 from "../../../components/kakao-picture-step2";
+import PicturePage3 from "../../../components/kakao-picture-step3";
+import PicturePage4 from "../../../components/kakao-picture-step4";
 import CompletePopup from "../../../components/complete-popup";
 import { useRouter } from "next/navigation";
 
-export default function Talk() {
+export default function Picture() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
   const router = useRouter();
 
   const handleNext = () => {
-    if (currPage < 4) {
+    if (currPage < 5) {
       setCurrPage(currPage + 1);
-    } else if (currPage === 4 && !completeModal) {
+    } else if (currPage === 5 && !completeModal) {
       setCompleteModal(true);
     }
   };
@@ -105,11 +106,15 @@ export default function Talk() {
         <TalkPage1 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 3 && (
-        <TalkPage2 handleNext={handleNext} handlers={handlers} />
+        <PicturePage2 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 4 && (
-        <TalkPage3 handleNext={handleNext} handlers={handlers} />
+        <PicturePage3 handleNext={handleNext} handlers={handlers} />
       )}
+      {currPage === 5 && (
+        <PicturePage4 handleNext={handleNext} handlers={handlers} />
+      )}
+
       <CompletePopup
         handleClose={handleCloseComplete}
         open={completeModal}
