@@ -109,11 +109,18 @@ export default function Kakao() {
             }}
           >
             <Button variant="contained" sx={{ flex: 1 }}>
-              <Typography sx={{ color: "white" }}>
+              <Typography
+                sx={{ color: "white" }}
+                onClick={() => router.push("/kakao-voice")}
+              >
                 음성 메세지 보내기
               </Typography>
             </Button>
-            <Button variant="contained" sx={{ flex: 1 }}>
+            <Button
+              variant="contained"
+              sx={{ flex: 1 }}
+              onClick={() => router.push("/kakao-save")}
+            >
               <Typography sx={{ color: "white" }}>
                 사진/영상 저장하기
               </Typography>
