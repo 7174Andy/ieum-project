@@ -84,7 +84,12 @@ export default function Kakao() {
             }}
           >
             <Button variant="contained" sx={{ flex: 1 }}>
-              <Typography sx={{ color: "white" }}>친구 추가</Typography>
+              <Typography
+                sx={{ color: "white" }}
+                onClick={() => router.push("/kakao-friend")}
+              >
+                친구 추가
+              </Typography>
             </Button>
             <Button variant="contained" sx={{ flex: 1 }}>
               <Typography sx={{ color: "white" }}>카카오 선물하기</Typography>

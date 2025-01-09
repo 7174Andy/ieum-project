@@ -34,6 +34,8 @@ export default function Picture() {
   const handlePrev = () => {
     if (currPage > 1) {
       setCurrPage(currPage - 1);
+    } else if (currPage === 1) {
+      router.push("/kakao");
     }
   };
 
