@@ -10,15 +10,18 @@ import { useSwipeable } from "react-swipeable";
 import Logo from "../../../public/images/kakao-app-logo.png";
 
 import HelpPopup from "../../../components/help-popup";
-import TalkPage1 from "../../../components/kakao-talk-step1";
-import TalkPage2 from "../../../components/kakao-talk-step2";
-import TalkPage3 from "../../../components/kakao-talk-step3";
+import PresentPage1 from "../../../components/kakao-present-step1";
+import PresentPage2 from "../../../components/kakao-present-step2";
+import PresentPage3 from "../../../components/kakao-present-step3";
+import PresentPage4 from "../../../components/kakao-present-step4";
+import PresentPage5 from "../../../components/kakao-present-step5";
+import PresentPage6 from "../../../components/kakao-present-step6";
 import CompletePopup from "../../../components/complete-popup";
 import { useRouter } from "next/navigation";
 
-const pageNum = 4;
+const pageNum = 7;
 
-export default function Talk() {
+export default function Present() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
@@ -106,13 +109,22 @@ export default function Talk() {
         </Box>
       )}
       {currPage === 2 && (
-        <TalkPage1 handleNext={handleNext} handlers={handlers} />
+        <PresentPage1 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 3 && (
-        <TalkPage2 handleNext={handleNext} handlers={handlers} />
+        <PresentPage2 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 4 && (
-        <TalkPage3 handleNext={handleNext} handlers={handlers} />
+        <PresentPage3 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 5 && (
+        <PresentPage4 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 6 && (
+        <PresentPage5 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 7 && (
+        <PresentPage6 handleNext={handleNext} handlers={handlers} />
       )}
       <CompletePopup
         handleClose={handleCloseComplete}

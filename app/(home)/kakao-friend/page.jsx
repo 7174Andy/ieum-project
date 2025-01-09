@@ -15,6 +15,8 @@ import FriendPage2 from "../../../components/kakao-friend-step2";
 import CompletePopup from "../../../components/complete-popup";
 import { useRouter } from "next/navigation";
 
+const pageNum = 3;
+
 export default function Picture() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
@@ -22,9 +24,9 @@ export default function Picture() {
   const router = useRouter();
 
   const handleNext = () => {
-    if (currPage < 3) {
+    if (currPage < pageNum) {
       setCurrPage(currPage + 1);
-    } else if (currPage === 3 && !completeModal) {
+    } else if (currPage === pageNum && !completeModal) {
       setCompleteModal(true);
     }
   };
@@ -44,7 +46,7 @@ export default function Picture() {
 
   const handleCloseComplete = () => {
     setCompleteModal(false);
-    setCurrPage(4);
+    setCurrPage(pageNum);
   };
 
   const handlers = useSwipeable({
