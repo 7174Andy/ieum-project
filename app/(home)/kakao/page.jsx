@@ -133,7 +133,10 @@ export default function Kakao() {
               gap: "1rem",
             }}
           >
-            <Button variant="contained">
+            <Button
+              variant="contained"
+              onClick={() => router.push("/kakao-map")}
+            >
               <Typography sx={{ color: "white" }}>위치 공유하기</Typography>
             </Button>
           </Box>
