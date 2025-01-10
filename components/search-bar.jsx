@@ -11,11 +11,12 @@ import {
 import { useRouter } from "next/router";
 
 const options = [
-  "카카오톡",
+  "건강관리",
+  "교통",
+  "아이폰",
   "안드로이드",
   "은행 업무",
-  "플레이 스토어",
-  "카카오 택시",
+  "카카오톡",
 ];
 
 export default function SearchBar({ search, setSearch, router }) {
@@ -32,11 +33,14 @@ export default function SearchBar({ search, setSearch, router }) {
         case "은행 업무":
           router.push("/financial");
           break;
-        case "플레이 스토어":
-          router.push("/playstore");
+        case "건강관리":
+          router.push("/health");
           break;
-        case "카카오 택시":
-          router.push("/kakaotaxi");
+        case "교통":
+          router.push("/transportation");
+          break;
+        case "아이폰":
+          router.push("/iphone");
           break;
         default:
           break;
