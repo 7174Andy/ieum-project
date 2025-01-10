@@ -64,9 +64,13 @@ export default function TalkPage1({ handleNext, handlers }) {
       <Button
         onClick={handleNext}
         className="arrow-button"
-        sx={{ position: "absolute", bottom: "2rem", right: "1rem" }}
+        sx={{
+          position: "absolute",
+          bottom: "2rem",
+          right: "1rem",
+        }}
       >
-        <ArrowCircleRightOutlinedIcon />
+        <ArrowCircleRightOutlinedIcon sx={{ width: "3rem", height: "3rem" }} />
       </Button>
       <MissClickPopup handleClose={handleClose} open={openModal} />
     </Box>

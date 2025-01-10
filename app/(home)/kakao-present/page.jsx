@@ -103,7 +103,9 @@ export default function Present() {
               onClick={handleNext}
               sx={{ position: "absolute", bottom: "1rem", right: "1rem" }}
             >
-              <ArrowCircleRightOutlinedIcon />
+              <ArrowCircleRightOutlinedIcon
+                sx={{ width: "3rem", height: "3rem" }}
+              />
             </Button>
           </Box>
         </Box>
