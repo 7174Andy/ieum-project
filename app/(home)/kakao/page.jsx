@@ -37,8 +37,8 @@ export default function Kakao() {
             marginBottom: "1rem",
           }}
         >
-          <Image src={Logo} width={75} height={75} />
-          <Typography variant="h3" sx={{ fontWeight: 500 }}>
+          <Image src={Logo} width={80} height={80} />
+          <Typography variant="h1" sx={{ fontWeight: 500 }}>
             카카오톡
           </Typography>
         </Box>
