@@ -7,7 +7,7 @@ import { useTheme } from "@mui/material/styles";
 
 import Screen from "../../public/images/kakao-picture-page-4.png";
 
-import MissClickPopup from "../../miss-click-popup";
+import MissClickPopup from "../miss-click-popup";
 
 export default function PicturePage4({ handleNext, handlers }) {
   const theme = useTheme();

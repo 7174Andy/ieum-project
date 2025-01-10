@@ -13,6 +13,7 @@ export default function PicturePage3({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const [steps, setSteps] = useState(0);
 
   const handleMisClick = (event) => {
     if (
@@ -30,6 +31,19 @@ export default function PicturePage3({ handleNext, handlers }) {
   const handleClose = () => {
     setOpenModal(false);
     setMissclickCount(0);
+  };
+
+  const handleTopBoxClick = () => {
+    if (steps === 0) {
+      setSteps(1);
+    }
+  };
+
+  const handleBottomBoxClick = () => {
+    if (steps === 1) {
+      setSteps(2);
+      handleNext();
+    }
   };
 
   return (
@@ -50,7 +64,7 @@ export default function PicturePage3({ handleNext, handlers }) {
       {...handlers}
     >
       <Box
-        onClick={handleNext}
+        onClick={handleTopBoxClick}
         className="clickable-box"
         sx={{
           position: "absolute",
@@ -62,7 +76,7 @@ export default function PicturePage3({ handleNext, handlers }) {
         }}
       ></Box>
       <Box
-        onClick={handleNext}
+        onClick={handleBottomBoxClick}
         className="clickable-box"
         sx={{
           position: "absolute",
