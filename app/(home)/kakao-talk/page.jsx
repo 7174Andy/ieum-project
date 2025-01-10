@@ -121,6 +121,7 @@ export default function Talk() {
         open={completeModal}
         handleAgain={handleAgain}
         router={router}
+        url={"/kakao"}
       />
     </>
   );

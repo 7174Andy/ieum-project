@@ -5,15 +5,14 @@ import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../../public/images/kakao-map-page-3.png";
+import Screen from "../../public/images/kakao-transfer-page-5.png";
 
 import MissClickPopup from "../miss-click-popup";
 
-export default function MapPage3({ handleNext, handlers }) {
+export default function TransferPage5({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
-  const [step, setStep] = useState(0);
 
   const handleMisClick = (event) => {
     if (
@@ -31,20 +30,6 @@ export default function MapPage3({ handleNext, handlers }) {
   const handleClose = () => {
     setOpenModal(false);
     setMissclickCount(0);
-    setStep(0);
-  };
-
-  const handleTopBoxClick = () => {
-    if (step === 0) {
-      setStep(1);
-    }
-  };
-
-  const handleBottomBoxClick = () => {
-    if (step === 1) {
-      setStep(2);
-      handleNext();
-    }
   };
 
   return (
@@ -65,27 +50,15 @@ export default function MapPage3({ handleNext, handlers }) {
       {...handlers}
     >
       <Box
-        onClick={handleTopBoxClick}
+        onClick={handleNext}
         className="clickable-box"
         sx={{
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "4%",
-          px: "46%",
-          top: "7%",
-        }}
-      ></Box>
-      <Box
-        onClick={handleBottomBoxClick}
-        className="clickable-box"
-        sx={{
-          position: "absolute",
-          border: `5px solid ${theme.palette.primary.main}`,
-          borderRadius: "12px",
-          py: "7%",
-          px: "49%",
-          bottom: "14%",
+          py: "35%",
+          px: "45%",
+          bottom: "2%",
         }}
       ></Box>
       <Button

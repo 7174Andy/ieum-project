@@ -15,6 +15,7 @@ export default function CompletePopup({
   open,
   handleAgain,
   router,
+  url,
 }) {
   const theme = useTheme();
 
@@ -85,7 +86,7 @@ export default function CompletePopup({
           <Button variant="contained" onClick={handleAgain}>
             다시하기
           </Button>
-          <Button variant="contained" onClick={() => router.push("/kakao")}>
+          <Button variant="contained" onClick={() => router.push(url)}>
             메뉴로
           </Button>
         </Box>

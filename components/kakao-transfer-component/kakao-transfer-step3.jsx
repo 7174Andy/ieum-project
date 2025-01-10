@@ -1,15 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../../public/images/kakao-map-page-3.png";
+import Screen from "../../public/images/kakao-transfer-page-3.png";
 
 import MissClickPopup from "../miss-click-popup";
 
-export default function MapPage3({ handleNext, handlers }) {
+export default function TransferPage3({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -71,11 +71,27 @@ export default function MapPage3({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "4%",
-          px: "46%",
-          top: "7%",
+          py: "33%",
+          px: "45%",
+          bottom: "13%",
         }}
       ></Box>
+      <Typography
+        sx={{
+          position: "absolute",
+          bottom: "47%",
+          left: "52%",
+          transform: "translate(-50%, 50%)",
+          color: theme.palette.primary.main,
+          fontWeight: "bold",
+          fontSize: "1.5rem",
+          backgroundColor: "white",
+          padding: "0.2rem 0.5rem",
+          borderRadius: "50%",
+        }}
+      >
+        1
+      </Typography>
       <Box
         onClick={handleBottomBoxClick}
         className="clickable-box"
@@ -83,15 +99,31 @@ export default function MapPage3({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "7%",
-          px: "49%",
-          bottom: "14%",
+          py: "8%",
+          px: "50%",
+          bottom: "3%",
         }}
       ></Box>
+      <Typography
+        sx={{
+          position: "absolute",
+          bottom: "13%",
+          left: "2%",
+          transform: "translate(-50%, 50%)",
+          color: theme.palette.primary.main,
+          fontWeight: "bold",
+          fontSize: "1.5rem",
+          backgroundColor: "white",
+          padding: "0.2rem 0.5rem",
+          borderRadius: "50%",
+        }}
+      >
+        2
+      </Typography>
       <Button
         onClick={handleNext}
         className="arrow-button"
-        sx={{ position: "absolute", bottom: "1rem", right: "-1rem" }}
+        sx={{ position: "absolute", bottom: "-1rem", right: "-1rem" }}
       >
         <ArrowCircleRightOutlinedIcon sx={{ width: "3rem", height: "3rem" }} />
       </Button>

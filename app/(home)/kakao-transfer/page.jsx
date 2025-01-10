@@ -11,10 +11,14 @@ import Logo from "../../../public/images/kakao-app-logo.png";
 
 import HelpPopup from "../../../components/help-popup";
 import TalkPage1 from "../../../components/kakao-talk-component/kakao-talk-step1";
+import TransferPage2 from "../../../components/kakao-transfer-component/kakao-transfer-step2";
+import TransferPage3 from "../../../components/kakao-transfer-component/kakao-transfer-step3";
+import TransferPage4 from "../../../components/kakao-transfer-component/kakao-transfer-step4";
+import TransferPage5 from "../../../components/kakao-transfer-component/kakao-transfer-step5";
 import CompletePopup from "../../../components/complete-popup";
 import { useRouter } from "next/navigation";
 
-const pageNum = 2;
+const pageNum = 6;
 
 export default function Talk() {
   const [currPage, setCurrPage] = useState(1);
@@ -108,12 +112,24 @@ export default function Talk() {
       {currPage === 2 && (
         <TalkPage1 handleNext={handleNext} handlers={handlers} />
       )}
-
+      {currPage === 3 && (
+        <TransferPage2 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 4 && (
+        <TransferPage3 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 5 && (
+        <TransferPage4 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 6 && (
+        <TransferPage5 handleNext={handleNext} handlers={handlers} />
+      )}
       <CompletePopup
         handleClose={handleCloseComplete}
         open={completeModal}
         handleAgain={handleAgain}
         router={router}
+        url={"/financial"}
       />
     </>
   );
