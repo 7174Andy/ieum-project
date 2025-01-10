@@ -10,7 +10,7 @@ import { useSwipeable } from "react-swipeable";
 import Logo from "../../../public/images/kakao-app-logo.png";
 
 import HelpPopup from "../../../components/help-popup";
-import TalkPage1 from "../../../components/kakao-picture-component/kakao-talk-step1";
+import TalkPage1 from "../../../components/kakao-talk-component/kakao-talk-step1";
 import PicturePage2 from "../../../components/kakao-picture-component/kakao-picture-step2";
 import PicturePage3 from "../../../components/kakao-picture-component/kakao-picture-step3";
 import PicturePage4 from "../../../components/kakao-map-component/kakao-map-step4";
@@ -126,6 +126,7 @@ export default function Picture() {
         open={completeModal}
         handleAgain={handleAgain}
         router={router}
+        url={"/kakao"}
       />
     </>
   );

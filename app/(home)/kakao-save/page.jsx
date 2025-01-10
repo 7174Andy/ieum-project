@@ -121,6 +121,7 @@ export default function Save() {
         open={completeModal}
         handleAgain={handleAgain}
         router={router}
+        url={"/kakao"}
       />
     </>
   );

@@ -117,6 +117,7 @@ export default function Picture() {
         open={completeModal}
         handleAgain={handleAgain}
         router={router}
+        url={"/kakao"}
       />
     </>
   );

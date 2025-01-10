@@ -125,6 +125,7 @@ export default function Map() {
         open={completeModal}
         handleAgain={handleAgain}
         router={router}
+        url={"/kakao"}
       />
     </>
   );

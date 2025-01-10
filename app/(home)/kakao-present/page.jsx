@@ -10,12 +10,12 @@ import { useSwipeable } from "react-swipeable";
 import Logo from "../../../public/images/kakao-app-logo.png";
 
 import HelpPopup from "../../../components/help-popup";
-import PresentPage1 from "../../../components/kakao-present-step1";
-import PresentPage2 from "../../../components/kakao-present-step2";
-import PresentPage3 from "../../../components/kakao-present-step3";
-import PresentPage4 from "../../../components/kakao-present-step4";
-import PresentPage5 from "../../../components/kakao-present-step5";
-import PresentPage6 from "../../../components/kakao-present-step6";
+import PresentPage1 from "../../../components/kakao-present-component/kakao-present-step1";
+import PresentPage2 from "../../../components/kakao-present-component/kakao-present-step2";
+import PresentPage3 from "../../../components/kakao-present-component/kakao-present-step3";
+import PresentPage4 from "../../../components/kakao-present-component/kakao-present-step4";
+import PresentPage5 from "../../../components/kakao-present-component/kakao-present-step5";
+import PresentPage6 from "../../../components/kakao-present-component/kakao-present-step6";
 import CompletePopup from "../../../components/complete-popup";
 import { useRouter } from "next/navigation";
 
@@ -133,6 +133,7 @@ export default function Present() {
         open={completeModal}
         handleAgain={handleAgain}
         router={router}
+        url={"/kakao"}
       />
     </>
   );
