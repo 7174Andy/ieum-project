@@ -83,10 +83,18 @@ export default function CompletePopup({
         <Box
           sx={{ display: "flex", justifyContent: "center", gap: "1rem", mt: 2 }}
         >
-          <Button variant="contained" onClick={handleAgain}>
+          <Button
+            variant="contained"
+            onClick={handleAgain}
+            sx={{ color: "white" }}
+          >
             다시하기
           </Button>
-          <Button variant="contained" onClick={() => router.push(url)}>
+          <Button
+            variant="contained"
+            onClick={() => router.push(url)}
+            sx={{ color: "white" }}
+          >
             메뉴로
           </Button>
         </Box>
