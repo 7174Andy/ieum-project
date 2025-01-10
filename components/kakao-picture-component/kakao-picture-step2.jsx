@@ -5,11 +5,11 @@ import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../public/images/kakao-voice-page-2.png";
+import Screen from "../../public/images/kakao-voice-page-2.png";
 
-import MissClickPopup from "./miss-click-popup";
+import MissClickPopup from "../miss-click-popup";
 
-export default function MapPage2({ handleNext, handlers }) {
+export default function PicturePage2({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -58,8 +58,8 @@ export default function MapPage2({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "11%",
           px: "10%",
-          bottom: "3%",
-          right: "2%",
+          bottom: "17%",
+          left: "3%",
         }}
       ></Box>
       <Button

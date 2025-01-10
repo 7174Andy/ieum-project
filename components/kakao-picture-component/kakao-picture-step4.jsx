@@ -5,11 +5,11 @@ import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../public/images/kakao-voice-page-1.png";
+import Screen from "../../public/images/kakao-picture-page-4.png";
 
-import MissClickPopup from "./miss-click-popup";
+import MissClickPopup from "../../miss-click-popup";
 
-export default function TalkPage1({ handleNext, handlers }) {
+export default function PicturePage4({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -56,19 +56,15 @@ export default function TalkPage1({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          padding: "4%",
-          bottom: "2%",
-          left: "-3%",
+          p: "3.5%",
+          bottom: "41%",
+          right: "-1%",
         }}
       ></Box>
       <Button
         onClick={handleNext}
         className="arrow-button"
-        sx={{
-          position: "absolute",
-          bottom: "2rem",
-          right: "1rem",
-        }}
+        sx={{ position: "absolute", bottom: "1rem", right: "-1rem" }}
       >
         <ArrowCircleRightOutlinedIcon sx={{ width: "3rem", height: "3rem" }} />
       </Button>

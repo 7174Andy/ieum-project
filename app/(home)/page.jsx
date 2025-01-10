@@ -32,6 +32,7 @@ export default function Home() {
           flexDirection: "column",
           gap: "1rem",
           alignItems: "center",
+          mb: "2rem",
         }}
       >
         <Image src={LogoText} width={180} height={90} />

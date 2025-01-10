@@ -5,11 +5,11 @@ import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../public/images/kakao-friend-page-2.png";
+import Screen from "../../public/images/kakao-present-page-3.png";
 
-import MissClickPopup from "./miss-click-popup";
+import MissClickPopup from "../miss-click-popup";
 
-export default function FriendPage2({ handleNext, handlers }) {
+export default function PresentPage3({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -56,10 +56,9 @@ export default function FriendPage2({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "4%",
-          px: "5%",
-          top: "35%",
-          right: "1%",
+          py: "18%",
+          px: "50%",
+          bottom: "16%",
         }}
       ></Box>
       <Button

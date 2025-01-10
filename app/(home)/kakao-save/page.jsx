@@ -10,9 +10,9 @@ import { useSwipeable } from "react-swipeable";
 import Logo from "../../../public/images/kakao-app-logo.png";
 
 import HelpPopup from "../../../components/help-popup";
-import SavePage1 from "../../../components/kakao-save-step1";
-import SavePage2 from "../../../components/kakao-save-step2";
-import SavePage3 from "../../../components/kakao-save-step3";
+import SavePage1 from "../../../components/kakao-save-component/kakao-save-step1";
+import SavePage2 from "../../../components/kakao-save-component/kakao-save-step2";
+import SavePage3 from "../../../components/kakao-save-component/kakao-save-step3";
 import CompletePopup from "../../../components/complete-popup";
 import { useRouter } from "next/navigation";
 

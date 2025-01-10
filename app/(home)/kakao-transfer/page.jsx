@@ -10,13 +10,13 @@ import { useSwipeable } from "react-swipeable";
 import Logo from "../../../public/images/kakao-app-logo.png";
 
 import HelpPopup from "../../../components/help-popup";
-import VoicePage1 from "../../../components/kakao-voice-component/kakao-voice-step1";
+import TalkPage1 from "../../../components/kakao-talk-component/kakao-talk-step1";
 import CompletePopup from "../../../components/complete-popup";
 import { useRouter } from "next/navigation";
 
-const pageNum = 4;
+const pageNum = 2;
 
-export default function Voice() {
+export default function Talk() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
@@ -34,7 +34,7 @@ export default function Voice() {
     if (currPage > 1) {
       setCurrPage(currPage - 1);
     } else if (currPage === 1) {
-      router.push("/kakao");
+      router.push("/financial");
     }
   };
 
@@ -106,8 +106,9 @@ export default function Voice() {
         </Box>
       )}
       {currPage === 2 && (
-        <VoicePage1 handleNext={handleNext} handlers={handlers} />
+        <TalkPage1 handleNext={handleNext} handlers={handlers} />
       )}
+
       <CompletePopup
         handleClose={handleCloseComplete}
         open={completeModal}

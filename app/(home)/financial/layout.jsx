@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import LogoText from "../../../public/images/logo.png";
 
-export default function KakaoLayout({ children }) {
+export default function FinancialLayout({ children }) {
   return (
     <Box
       sx={{

@@ -10,10 +10,10 @@ import { useSwipeable } from "react-swipeable";
 import Logo from "../../../public/images/kakao-app-logo.png";
 
 import HelpPopup from "../../../components/help-popup";
-import TalkPage1 from "../../../components/kakao-talk-step1";
-import MapPage2 from "../../../components/kakao-map-step2";
-import MapPage3 from "../../../components/kakao-map-step3";
-import MapPage4 from "../../../components/kakao-map-step4";
+import TalkPage1 from "../../../components/kakao-talk-component/kakao-talk-step1";
+import MapPage2 from "../../../components/kakao-map-component/kakao-map-step2";
+import MapPage3 from "../../../components/kakao-map-component/kakao-map-step3";
+import MapPage4 from "../../../components/kakao-map-component/kakao-map-step4";
 import CompletePopup from "../../../components/complete-popup";
 import { useRouter } from "next/navigation";
 

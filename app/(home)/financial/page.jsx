@@ -8,7 +8,7 @@ import { useTheme } from "@mui/material/styles";
 
 import Logo from "../../../public/images/main-character.png";
 
-export default function Kakao() {
+export default function Financial() {
   const router = useRouter();
   const theme = useTheme();
 
@@ -26,7 +26,6 @@ export default function Kakao() {
           maxWidth: "400px",
           border: `1px solid ${theme.palette.border.main}`,
           backgroundColor: theme.palette.border.background,
-          height: "100%",
           gap: "1rem",
         }}
       >
@@ -39,7 +38,7 @@ export default function Kakao() {
         >
           <Image src={Logo} width={80} height={80} />
           <Typography variant="h1" sx={{ fontWeight: 500 }}>
-            카카오톡
+            은행 업무
           </Typography>
         </Box>
         <Box
@@ -52,8 +51,7 @@ export default function Kakao() {
           }}
         >
           <Typography>
-            아래 버튼을 통해 카카오톡의 주요 기능을 배우고, 사용 방법을
-            익혀보세요.
+            아래 버튼을 통해 핸드폰으로 은행 업무하는 방법을 익혀보세요.
           </Typography>
         </Box>
         <Box
@@ -75,17 +73,17 @@ export default function Kakao() {
             <Button variant="contained" sx={{ flex: 1 }}>
               <Typography
                 sx={{ color: "white" }}
-                onClick={() => router.push("/kakao-talk")}
+                onClick={() => router.push("/kakao-transfer")}
               >
-                보이스톡/페이스톡
+                카카오톡 이체
               </Typography>
             </Button>
             <Button variant="contained" sx={{ flex: 1 }}>
               <Typography
                 sx={{ color: "white" }}
-                onClick={() => router.push("/kakao-picture")}
+                onClick={() => router.push("/kakao-divide")}
               >
-                사진 보내기
+                카카오톡 정산
               </Typography>
             </Button>
           </Box>
@@ -100,61 +98,21 @@ export default function Kakao() {
             <Button variant="contained" sx={{ flex: 1 }}>
               <Typography
                 sx={{ color: "white" }}
-                onClick={() => router.push("/kakao-friend")}
+                onClick={() => router.push("/kakaopay")}
               >
-                친구 추가
+                카카오페이 결제
               </Typography>
             </Button>
             <Button variant="contained" sx={{ flex: 1 }}>
               <Typography
                 sx={{ color: "white" }}
-                onClick={() => router.push("/kakao-present")}
+                onClick={() => router.push("/kakaopay-register")}
               >
-                카카오 선물하기
+                카카오톡 계좌 등록
               </Typography>
             </Button>
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              gap: "1rem",
-              justifyContent: "center",
-            }}
-          >
-            <Button variant="contained" sx={{ flex: 1 }}>
-              <Typography
-                sx={{ color: "white" }}
-                onClick={() => router.push("/kakao-voice")}
-              >
-                음성 메세지 보내기
-              </Typography>
-            </Button>
-            <Button
-              variant="contained"
-              sx={{ flex: 1 }}
-              onClick={() => router.push("/kakao-save")}
-            >
-              <Typography sx={{ color: "white" }}>
-                사진/영상 저장하기
-              </Typography>
-            </Button>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              gap: "1rem",
-            }}
-          >
-            <Button
-              variant="contained"
-              onClick={() => router.push("/kakao-map")}
-            >
-              <Typography sx={{ color: "white" }}>위치 공유하기</Typography>
-            </Button>
-          </Box>
-          <Button onClick={() => router.push("/")}>
+          <Button onClick={() => router.push("/")} sx={{ flex: 1, mt: "1rem" }}>
             <Typography>뒤로가기</Typography>
           </Button>
         </Box>

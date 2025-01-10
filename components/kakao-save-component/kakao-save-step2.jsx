@@ -5,14 +5,15 @@ import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../public/images/kakao-present-page-4.png";
+import Screen from "../../public/images/kakao-save-page-2.png";
 
-import MissClickPopup from "./miss-click-popup";
+import MissClickPopup from "../miss-click-popup";
 
-export default function PresentPage4({ handleNext, handlers }) {
+export default function SavePage2({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const [step, setStep] = useState(0);
 
   const handleMisClick = (event) => {
     if (
@@ -56,10 +57,9 @@ export default function PresentPage4({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "5%",
-          px: "21%",
-          bottom: "3%",
-          right: "0",
+          p: "5%",
+          bottom: "2%",
+          left: "-1%",
         }}
       ></Box>
       <Button

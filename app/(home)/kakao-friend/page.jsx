@@ -10,8 +10,8 @@ import { useSwipeable } from "react-swipeable";
 import Logo from "../../../public/images/kakao-app-logo.png";
 
 import HelpPopup from "../../../components/help-popup";
-import FriendPage1 from "../../../components/kakao-friend-step1";
-import FriendPage2 from "../../../components/kakao-friend-step2";
+import FriendPage1 from "../../../components/kakao-friend-component/kakao-friend-step1";
+import FriendPage2 from "../../../components/kakao-friend-component/kakao-friend-step2";
 import CompletePopup from "../../../components/complete-popup";
 import { useRouter } from "next/navigation";
 

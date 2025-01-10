@@ -13,7 +13,7 @@ import { useRouter } from "next/router";
 const options = [
   "카카오톡",
   "안드로이드",
-  "카카오페이",
+  "은행 업무",
   "플레이 스토어",
   "카카오 택시",
 ];
@@ -29,8 +29,8 @@ export default function SearchBar({ search, setSearch, router }) {
         case "안드로이드":
           router.push("/android");
           break;
-        case "카카오페이":
-          router.push("/kakaopay");
+        case "은행 업무":
+          router.push("/financial");
           break;
         case "플레이 스토어":
           router.push("/playstore");

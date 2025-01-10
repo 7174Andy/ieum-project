@@ -5,14 +5,15 @@ import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../public/images/kakao-present-page-5.png";
+import Screen from "../../public/images/kakao-present-page-6.png";
 
-import MissClickPopup from "./miss-click-popup";
+import MissClickPopup from "../miss-click-popup";
 
-export default function PresentPage5({ handleNext, handlers }) {
+export default function PresentPage6({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const [step, setStep] = useState(0);
 
   const handleMisClick = (event) => {
     if (
@@ -30,6 +31,19 @@ export default function PresentPage5({ handleNext, handlers }) {
   const handleClose = () => {
     setOpenModal(false);
     setMissclickCount(0);
+  };
+
+  const handleTopBoxClick = () => {
+    if (step === 0) {
+      setStep(1);
+    }
+  };
+
+  const handleBottomBoxClick = () => {
+    if (step === 1) {
+      setStep(2);
+      handleNext();
+    }
   };
 
   return (
@@ -50,15 +64,28 @@ export default function PresentPage5({ handleNext, handlers }) {
       {...handlers}
     >
       <Box
-        onClick={handleNext}
+        onClick={handleTopBoxClick}
         className="clickable-box"
         sx={{
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "5%",
-          px: "34%",
-          bottom: "4%",
+          py: "10%",
+          px: "45%",
+          bottom: "20%",
+          right: "2%",
+        }}
+      ></Box>
+      <Box
+        onClick={handleBottomBoxClick}
+        className="clickable-box"
+        sx={{
+          position: "absolute",
+          border: `5px solid ${theme.palette.primary.main}`,
+          borderRadius: "12px",
+          py: "6%",
+          px: "49%",
+          bottom: "2%",
           right: "0",
         }}
       ></Box>
