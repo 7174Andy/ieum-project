@@ -5,11 +5,11 @@ import { Box, Button, Typography } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../../public/images/kakao-transfer-page-3.png";
+import Screen from "../../public/images/kakao-divide-page-5.png";
 
 import MissClickPopup from "../miss-click-popup";
 
-export default function TransferPage4({ handleNext, handlers }) {
+export default function DividePage5({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -71,16 +71,16 @@ export default function TransferPage4({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "33%",
-          px: "45%",
-          bottom: "13%",
+          p: "4%",
+          top: "42%",
+          right: "-1%",
         }}
       ></Box>
       <Typography
         sx={{
           position: "absolute",
-          bottom: "47%",
-          left: "52%",
+          bottom: "50%",
+          right: "0%",
           transform: "translate(-50%, 50%)",
           color: theme.palette.primary.main,
           fontWeight: "bold",
@@ -103,13 +103,13 @@ export default function TransferPage4({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "8%",
           px: "50%",
-          bottom: "3%",
+          bottom: "0%",
         }}
       ></Box>
       <Typography
         sx={{
           position: "absolute",
-          bottom: "13%",
+          bottom: "11%",
           left: "2%",
           transform: "translate(-50%, 50%)",
           color: theme.palette.primary.main,

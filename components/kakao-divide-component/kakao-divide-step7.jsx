@@ -5,11 +5,11 @@ import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../../public/images/kakao-transfer-page-6.png";
+import Screen from "../../public/images/kakao-divide-page-7.png";
 
 import MissClickPopup from "../miss-click-popup";
 
-export default function TransferPage5({ handleNext, handlers }) {
+export default function DividePage7({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -58,7 +58,7 @@ export default function TransferPage5({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "8%",
           px: "49%",
-          bottom: "39%",
+          bottom: "3%",
         }}
       ></Box>
       <Button

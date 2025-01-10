@@ -12,16 +12,17 @@ import Logo from "../../../public/images/kakao-app-logo.png";
 import HelpPopup from "../../../components/help-popup";
 import TalkPage1 from "../../../components/kakao-talk-component/kakao-talk-step1";
 import TransferPage2 from "../../../components/kakao-transfer-component/kakao-transfer-step2";
-import TransferPage3 from "../../../components/kakao-transfer-component/kakao-transfer-step3";
-import TransferPage4 from "../../../components/kakao-transfer-component/kakao-transfer-step4";
-import TransferPage5 from "../../../components/kakao-transfer-component/kakao-transfer-step5";
-import TransferPage6 from "../../../components/kakao-transfer-component/kakao-transfer-step6";
+import DividePage3 from "../../../components/kakao-divide-component/kakao-divide-step3";
+import DividePage4 from "../../../components/kakao-divide-component/kakao-divide-step4";
+import DividePage5 from "../../../components/kakao-divide-component/kakao-divide-step5";
+import DividePage6 from "../../../components/kakao-divide-component/kakao-divide-step6";
+import DividePage7 from "../../../components/kakao-divide-component/kakao-divide-step7";
 import CompletePopup from "../../../components/complete-popup";
 import { useRouter } from "next/navigation";
 
-const pageNum = 7;
+const pageNum = 8;
 
-export default function Transfer() {
+export default function Divide() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
@@ -117,16 +118,19 @@ export default function Transfer() {
         <TransferPage2 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 4 && (
-        <TransferPage3 handleNext={handleNext} handlers={handlers} />
+        <DividePage3 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 5 && (
-        <TransferPage4 handleNext={handleNext} handlers={handlers} />
+        <DividePage4 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 6 && (
-        <TransferPage5 handleNext={handleNext} handlers={handlers} />
+        <DividePage5 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 7 && (
-        <TransferPage6 handleNext={handleNext} handlers={handlers} />
+        <DividePage6 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 8 && (
+        <DividePage7 handleNext={handleNext} handlers={handlers} />
       )}
       <CompletePopup
         handleClose={handleCloseComplete}

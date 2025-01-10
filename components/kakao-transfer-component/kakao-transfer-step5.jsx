@@ -5,7 +5,7 @@ import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../../public/images/kakao-transfer-page-5.png";
+import Screen from "../../public/images/kakao-transfer-page-4.png";
 
 import MissClickPopup from "../miss-click-popup";
 
@@ -56,9 +56,10 @@ export default function TransferPage5({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "35%",
-          px: "45%",
-          bottom: "2%",
+          py: "7%",
+          px: "30%",
+          bottom: "7%",
+          right: "1%",
         }}
       ></Box>
       <Button

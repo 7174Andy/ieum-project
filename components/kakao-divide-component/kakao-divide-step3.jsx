@@ -9,7 +9,7 @@ import Screen from "../../public/images/kakao-transfer-page-6.png";
 
 import MissClickPopup from "../miss-click-popup";
 
-export default function TransferPage5({ handleNext, handlers }) {
+export default function DividePage3({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -58,7 +58,7 @@ export default function TransferPage5({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "8%",
           px: "49%",
-          bottom: "39%",
+          bottom: "24%",
         }}
       ></Box>
       <Button
