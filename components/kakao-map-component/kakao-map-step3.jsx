@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
@@ -76,6 +76,24 @@ export default function MapPage3({ handleNext, handlers }) {
           top: "7%",
         }}
       ></Box>
+      <Typography
+        sx={{
+          position: "absolute",
+          top: "10%",
+          left: "3%",
+          transform: "translate(-50%, 50%)",
+          color: theme.palette.primary.main,
+          fontWeight: "bold",
+          fontSize: "1.5rem",
+          backgroundColor: "white",
+          padding: "0rem 0.75rem",
+          borderRadius: "50%",
+          textAlign: "center",
+          border: `4px solid ${theme.palette.primary.main}`,
+        }}
+      >
+        1
+      </Typography>
       <Box
         onClick={handleBottomBoxClick}
         className="clickable-box"
@@ -88,6 +106,24 @@ export default function MapPage3({ handleNext, handlers }) {
           bottom: "14%",
         }}
       ></Box>
+      <Typography
+        sx={{
+          position: "absolute",
+          bottom: "10%",
+          left: "3%",
+          transform: "translate(-50%, 50%)",
+          color: theme.palette.primary.main,
+          fontWeight: "bold",
+          fontSize: "1.5rem",
+          backgroundColor: "white",
+          padding: "0rem 0.75rem",
+          borderRadius: "50%",
+          textAlign: "center",
+          border: `4px solid ${theme.palette.primary.main}`,
+        }}
+      >
+        2
+      </Typography>
       <Button
         onClick={handleNext}
         className="arrow-button"
