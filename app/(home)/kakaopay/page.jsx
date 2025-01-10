@@ -10,12 +10,14 @@ import { useSwipeable } from "react-swipeable";
 import Logo from "../../../public/images/kakao-pay-logo.png";
 
 import HelpPopup from "../../../components/help-popup";
+import KakaoPayPage1 from "../../../components/kakao-pay-component/kakao-pay-step1";
+import KakaoPayPage2 from "../../../components/kakao-pay-component/kakao-pay-step2";
 import CompletePopup from "../../../components/complete-popup";
 import { useRouter } from "next/navigation";
 
-const pageNum = 8;
+const pageNum = 3;
 
-export default function Divide() {
+export default function KakaoPay() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
@@ -103,6 +105,12 @@ export default function Divide() {
             </Button>
           </Box>
         </Box>
+      )}
+      {currPage === 2 && (
+        <KakaoPayPage1 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 3 && (
+        <KakaoPayPage2 handleNext={handleNext} handlers={handlers} />
       )}
       <CompletePopup
         handleClose={handleCloseComplete}
