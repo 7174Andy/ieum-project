@@ -11,10 +11,13 @@ import Logo from "../../../public/images/kakao-app-logo.png";
 
 import HelpPopup from "../../../components/help-popup";
 import VoicePage1 from "../../../components/kakao-voice-component/kakao-voice-step1";
+import VoicePage2 from "../../../components/kakao-voice-component/kakao-voice-step2";
+import VoicePage3 from "../../../components/kakao-voice-component/kakao-voice-step3";
+import VoicePage4 from "../../../components/kakao-voice-component/kakao-voice-step4";
 import CompletePopup from "../../../components/complete-popup";
 import { useRouter } from "next/navigation";
 
-const pageNum = 4;
+const pageNum = 5;
 
 export default function Voice() {
   const [currPage, setCurrPage] = useState(1);
@@ -107,6 +110,15 @@ export default function Voice() {
       )}
       {currPage === 2 && (
         <VoicePage1 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 3 && (
+        <VoicePage2 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 4 && (
+        <VoicePage3 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 5 && (
+        <VoicePage4 handleNext={handleNext} handlers={handlers} />
       )}
       <CompletePopup
         handleClose={handleCloseComplete}
