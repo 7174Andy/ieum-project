@@ -40,7 +40,7 @@ export default function VoicePage4({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "contained",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom",
         height: "100vh",
@@ -56,8 +56,8 @@ export default function VoicePage4({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          p: "5%",
-          bottom: "10%",
+          p: "4%",
+          bottom: "11%",
           right: "0",
         }}
       ></Box>

@@ -40,7 +40,7 @@ export default function VoicePage3({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "contained",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom",
         height: "100vh",
@@ -57,7 +57,7 @@ export default function VoicePage3({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "5%",
-          bottom: "15%",
+          bottom: "11%",
         }}
       ></Box>
       <Button
