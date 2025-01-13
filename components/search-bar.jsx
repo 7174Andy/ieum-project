@@ -39,7 +39,7 @@ export default function SearchBar({ search, setSearch, router }) {
           router.push("/transportation");
           break;
         case "아이폰":
-          router.push("/iphone");
+          router.push("/apple");
           break;
         default:
           break;
