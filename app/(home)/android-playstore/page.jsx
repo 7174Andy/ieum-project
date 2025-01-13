@@ -7,19 +7,19 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useSwipeable } from "react-swipeable";
 
-import Logo from "../../../public/images/android-alarm-logo.png";
+import Logo from "../../../public/images/googleplay-logo.png";
 
 import HelpPopup from "../../../components/help-popup";
-import AndroidAlarmPage1 from "../../../components/android-alarm-component/android-alarm-step1";
-import AndroidTimerPage2 from "../../../components/android-timer-component/android-timer-step2";
-import AndroidTimerPage3 from "../../../components/android-timer-component/android-timer-step3";
-import AndroidTimerPage4 from "../../../components/android-timer-component/android-timer-step4";
+import AndroidStorePage1 from "../../../components/android-store-component/android-store-step1";
+import AndroidStorePage2 from "../../../components/android-store-component/android-store-step2";
+import AndroidStorePage3 from "../../../components/android-store-component/android-store-step3";
+import AndroidStorePage4 from "../../../components/android-store-component/android-store-step4";
 import CompletePopup from "../../../components/complete-popup";
 import { useRouter } from "next/navigation";
 
 const pageNum = 5;
 
-export default function AndroidTimer() {
+export default function DownloadApp() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
@@ -109,16 +109,16 @@ export default function AndroidTimer() {
         </Box>
       )}
       {currPage === 2 && (
-        <AndroidAlarmPage1 handleNext={handleNext} handlers={handlers} />
+        <AndroidStorePage1 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 3 && (
-        <AndroidTimerPage2 handleNext={handleNext} handlers={handlers} />
+        <AndroidStorePage2 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 4 && (
-        <AndroidTimerPage3 handleNext={handleNext} handlers={handlers} />
+        <AndroidStorePage3 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 5 && (
-        <AndroidTimerPage4 handleNext={handleNext} handlers={handlers} />
+        <AndroidStorePage4 handleNext={handleNext} handlers={handlers} />
       )}
       <CompletePopup
         handleClose={handleCloseComplete}

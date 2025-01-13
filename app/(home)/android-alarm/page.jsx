@@ -19,7 +19,7 @@ import { useRouter } from "next/navigation";
 
 const pageNum = 5;
 
-export default function Divide() {
+export default function AndroidAlarm() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);

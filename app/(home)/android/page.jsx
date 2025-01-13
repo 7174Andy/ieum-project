@@ -100,7 +100,7 @@ export default function Android() {
                 sx={{ color: "white" }}
                 onClick={() => router.push("/android-playstore")}
               >
-                플레이스토어
+                어플 설치
               </Typography>
             </Button>
             <Button variant="contained" sx={{ flex: 1 }}>
