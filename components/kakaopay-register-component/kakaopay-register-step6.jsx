@@ -54,6 +54,8 @@ export default function RegisterPage6({ handleNext, handlers }) {
     if (step === 2) {
       setStep(3);
       handleNext();
+      setStep(0);
+      s;
     } else {
       setStep(0);
     }

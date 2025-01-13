@@ -44,6 +44,7 @@ export default function PicturePage3({ handleNext, handlers }) {
     if (steps === 1) {
       setSteps(2);
       handleNext();
+      setSteps(0);
     }
   };
 

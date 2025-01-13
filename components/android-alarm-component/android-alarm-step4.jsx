@@ -1,20 +1,19 @@
 "use client";
 
 import React, { useState } from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../../public/images/kakao-map-page-3.png";
+import Screen from "../../public/images/android-alarm-page-4.png";
 
 import MissClickPopup from "../miss-click-popup";
 import { glow } from "../glow";
 
-export default function MapPage3({ handleNext, handlers }) {
+export default function AndroidAlarmPage4({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
-  const [step, setStep] = useState(0);
 
   const handleMisClick = (event) => {
     if (
@@ -32,21 +31,6 @@ export default function MapPage3({ handleNext, handlers }) {
   const handleClose = () => {
     setOpenModal(false);
     setMissclickCount(0);
-    setStep(0);
-  };
-
-  const handleTopBoxClick = () => {
-    if (step === 0) {
-      setStep(1);
-    }
-  };
-
-  const handleBottomBoxClick = () => {
-    if (step === 1) {
-      setStep(2);
-      handleNext();
-      setStep(0);
-    }
   };
 
   return (
@@ -57,7 +41,7 @@ export default function MapPage3({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         height: "100vh",
@@ -67,67 +51,41 @@ export default function MapPage3({ handleNext, handlers }) {
       {...handlers}
     >
       <Box
-        onClick={handleTopBoxClick}
         className="clickable-box"
         sx={{
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "4%",
-          px: "46%",
-          top: "7%",
-          animation: `${step === 0 ? `${glow} 2s infinite` : "none"}`,
+          p: "5%",
+          top: "16%",
+          right: "16%",
         }}
       ></Box>
-      <Typography
-        sx={{
-          position: "absolute",
-          top: "10%",
-          left: "3%",
-          transform: "translate(-50%, 50%)",
-          color: theme.palette.primary.main,
-          fontWeight: "bold",
-          fontSize: "1.5rem",
-          backgroundColor: "white",
-          padding: "0rem 0.75rem",
-          borderRadius: "50%",
-          textAlign: "center",
-          border: `4px solid ${theme.palette.primary.main}`,
-        }}
-      >
-        1
-      </Typography>
       <Box
-        onClick={handleBottomBoxClick}
         className="clickable-box"
         sx={{
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "7%",
-          px: "49%",
-          bottom: "14%",
-          animation: `${step === 1 ? `${glow} 2s infinite` : "none"}`,
+          py: "15%",
+          px: "48%",
+          top: "24%",
         }}
       ></Box>
-      <Typography
+      <Box
+        onClick={handleNext}
+        className="clickable-box"
         sx={{
           position: "absolute",
-          bottom: "10%",
-          left: "3%",
-          transform: "translate(-50%, 50%)",
-          color: theme.palette.primary.main,
-          fontWeight: "bold",
-          fontSize: "1.5rem",
-          backgroundColor: "white",
-          padding: "0rem 0.75rem",
-          borderRadius: "50%",
-          textAlign: "center",
-          border: `4px solid ${theme.palette.primary.main}`,
+          border: `5px solid ${theme.palette.primary.main}`,
+          borderRadius: "12px",
+          py: "5%",
+          px: "8%",
+          top: "29%",
+          right: "5%",
+          animation: `${glow} 2s infinite`,
         }}
-      >
-        2
-      </Typography>
+      ></Box>
       <Button
         onClick={handleNext}
         className="arrow-button"

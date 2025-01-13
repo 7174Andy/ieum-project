@@ -45,6 +45,7 @@ export default function DividePage5({ handleNext, handlers }) {
     if (step === 1) {
       setStep(2);
       handleNext();
+      setStep(0);
     }
   };
 

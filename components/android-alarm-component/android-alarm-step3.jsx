@@ -5,12 +5,12 @@ import { Box, Button, Typography } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../../public/images/kakao-map-page-3.png";
+import Screen from "../../public/images/android-alarm-page-3.png";
 
 import MissClickPopup from "../miss-click-popup";
 import { glow } from "../glow";
 
-export default function MapPage3({ handleNext, handlers }) {
+export default function AndroidAlarmPage3({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -32,7 +32,6 @@ export default function MapPage3({ handleNext, handlers }) {
   const handleClose = () => {
     setOpenModal(false);
     setMissclickCount(0);
-    setStep(0);
   };
 
   const handleTopBoxClick = () => {
@@ -57,7 +56,7 @@ export default function MapPage3({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         height: "100vh",
@@ -73,9 +72,9 @@ export default function MapPage3({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "4%",
-          px: "46%",
-          top: "7%",
+          py: "25%",
+          px: "43%",
+          top: "17%",
           animation: `${step === 0 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
@@ -83,7 +82,7 @@ export default function MapPage3({ handleNext, handlers }) {
         sx={{
           position: "absolute",
           top: "10%",
-          left: "3%",
+          right: "0%",
           transform: "translate(-50%, 50%)",
           color: theme.palette.primary.main,
           fontWeight: "bold",
@@ -104,17 +103,18 @@ export default function MapPage3({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "7%",
-          px: "49%",
-          bottom: "14%",
+          py: "8%",
+          px: "20%",
+          bottom: "10%",
+          right: "10%",
           animation: `${step === 1 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
       <Typography
         sx={{
           position: "absolute",
-          bottom: "10%",
-          left: "3%",
+          bottom: "20%",
+          right: "0%",
           transform: "translate(-50%, 50%)",
           color: theme.palette.primary.main,
           fontWeight: "bold",
