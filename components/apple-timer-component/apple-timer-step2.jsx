@@ -14,6 +14,7 @@ export default function AppleTimerPage2({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const [step, setStep] = useState(0);
 
   const handleMissClick = (event) => {
     if (
@@ -33,6 +34,20 @@ export default function AppleTimerPage2({ handleNext, handlers }) {
     setMissclickCount(0);
   };
 
+  const handleTopBoxClick = () => {
+    if (step === 0) {
+      setStep(1);
+    }
+  };
+
+  const handleBottomBoxClick = () => {
+    if (step === 1) {
+      setStep(2);
+      handleNext();
+      setStep(0);
+    }
+  };
+
   return (
     <Box
       onClick={handleMissClick}
@@ -50,18 +65,67 @@ export default function AppleTimerPage2({ handleNext, handlers }) {
       {...handlers}
     >
       <Box
-        onClick={handleNext}
+        onClick={handleTopBoxClick}
         className="clickable-box"
         sx={{
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          p: "9%",
-          top: "44%",
-          right: "3%",
-          animation: `${glow} 2s infinite`,
+          py: "20%",
+          px: "45%",
+          top: "15%",
+          animation: `${step === 0 ? glow : ""} 2s infinite`,
         }}
       ></Box>
+      <Typography
+        sx={{
+          position: "absolute",
+          top: "7%",
+          left: "10%",
+          transform: "translate(-50%, 50%)",
+          color: theme.palette.primary.main,
+          fontWeight: "bold",
+          fontSize: "1.5rem",
+          backgroundColor: "white",
+          padding: "0rem 0.75rem",
+          borderRadius: "50%",
+          textAlign: "center",
+          border: `4px solid ${theme.palette.primary.main}`,
+        }}
+      >
+        1
+      </Typography>
+      <Box
+        onClick={handleBottomBoxClick}
+        className="clickable-box"
+        sx={{
+          position: "absolute",
+          border: `5px solid ${theme.palette.primary.main}`,
+          borderRadius: "12px",
+          p: "8%",
+          top: "38%",
+          right: "3%",
+          animation: `${step === 1 ? glow : ""} 2s infinite`,
+        }}
+      ></Box>
+      <Typography
+        sx={{
+          position: "absolute",
+          top: "45%",
+          right: "15%",
+          transform: "translate(-50%, 50%)",
+          color: theme.palette.primary.main,
+          fontWeight: "bold",
+          fontSize: "1.5rem",
+          backgroundColor: "white",
+          padding: "0rem 0.75rem",
+          borderRadius: "50%",
+          textAlign: "center",
+          border: `4px solid ${theme.palette.primary.main}`,
+        }}
+      >
+        2
+      </Typography>
       <Button
         onClick={handleNext}
         className="arrow-button"

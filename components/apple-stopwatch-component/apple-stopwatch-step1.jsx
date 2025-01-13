@@ -5,12 +5,12 @@ import { Box, Button, Typography } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../../public/images/apple-timer-page-3.png";
+import Screen from "../../public/images/apple-alarm-page-1.png";
 
 import MissClickPopup from "../miss-click-popup";
 import { glow } from "../glow";
 
-export default function AppleTimerPage3({ handleNext, handlers }) {
+export default function AppleStopWatchPage1({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -50,27 +50,16 @@ export default function AppleTimerPage3({ handleNext, handlers }) {
       {...handlers}
     >
       <Box
-        className="clickable-box"
-        sx={{
-          position: "absolute",
-          border: `5px solid ${theme.palette.primary.main}`,
-          borderRadius: "12px",
-          py: "13%",
-          px: "48%",
-          top: "10%",
-        }}
-      ></Box>
-
-      <Box
         onClick={handleNext}
         className="clickable-box"
         sx={{
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          p: "8%",
-          top: "11%",
-          right: "5%",
+          py: "9%",
+          px: "8%",
+          bottom: "0%",
+          left: "54%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>

@@ -58,8 +58,8 @@ export default function AppleTimerPage1({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "9%",
           px: "8%",
-          bottom: "0%",
-          left: "54%",
+          bottom: "1%",
+          right: "3%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>

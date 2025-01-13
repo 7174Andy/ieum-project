@@ -10,16 +10,15 @@ import { useSwipeable } from "react-swipeable";
 import Logo from "../../../public/images/apple-clock-logo.png";
 
 import HelpPopup from "../../../components/help-popup";
-import AppleTimerPage1 from "../../../components/apple-timer-component/apple-timer-step1";
-import AppleTimerPage2 from "../../../components/apple-timer-component/apple-timer-step2";
-import AppleTimerPage3 from "../../../components/apple-timer-component/apple-timer-step3";
-import AppleTimerPage4 from "../../../components/apple-timer-component/apple-timer-step4";
+import AppleStopWatchPage1 from "../../../components/apple-stopwatch-component/apple-stopwatch-step1";
+import AppleStopWatchPage2 from "../../../components/apple-stopwatch-component/apple-stopwatch-step2";
+import AppleStopWatchPage3 from "../../../components/apple-stopwatch-component/apple-stopwatch-step3";
 import CompletePopup from "../../../components/complete-popup";
 import { useRouter } from "next/navigation";
 
-const pageNum = 5;
+const pageNum = 4;
 
-export default function AppleTimer() {
+export default function AppleStopWatch() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
@@ -109,16 +108,13 @@ export default function AppleTimer() {
         </Box>
       )}
       {currPage === 2 && (
-        <AppleTimerPage1 handleNext={handleNext} handlers={handlers} />
+        <AppleStopWatchPage1 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 3 && (
-        <AppleTimerPage2 handleNext={handleNext} handlers={handlers} />
+        <AppleStopWatchPage2 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 4 && (
-        <AppleTimerPage3 handleNext={handleNext} handlers={handlers} />
-      )}
-      {currPage === 5 && (
-        <AppleTimerPage4 handleNext={handleNext} handlers={handlers} />
+        <AppleStopWatchPage3 handleNext={handleNext} handlers={handlers} />
       )}
       <CompletePopup
         handleClose={handleCloseComplete}
