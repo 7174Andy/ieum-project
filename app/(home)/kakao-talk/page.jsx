@@ -5,6 +5,7 @@ import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useSwipeable } from "react-swipeable";
 
 import Logo from "../../../public/images/kakao-app-logo.png";
@@ -13,15 +14,19 @@ import HelpPopup from "../../../components/help-popup";
 import TalkPage1 from "../../../components/kakao-talk-component/kakao-talk-step1";
 import TalkPage2 from "../../../components/kakao-talk-component/kakao-talk-step2";
 import TalkPage3 from "../../../components/kakao-talk-component/kakao-talk-step3";
+import RecordingPopup from "../../../components/recording-popup";
 import CompletePopup from "../../../components/complete-popup";
 import { useRouter } from "next/navigation";
 
 const pageNum = 4;
+const TTS_TEXT =
+  "카카오톡에서 전화하는 방법을 배워보겠습니다. 화면에 보이는 어플을 찾아 실행해주세요.";
 
 export default function Talk() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
+  const [openSound, setOpenSound] = useState(false);
   const router = useRouter();
 
   const handleNext = () => {
@@ -86,6 +91,12 @@ export default function Talk() {
               overflow: "hidden",
             }}
           >
+            <Button
+              onClick={() => setOpenSound(true)}
+              sx={{ position: "absolute", top: "1rem", right: "1rem" }}
+            >
+              <HeadphonesRoundedIcon sx={{ width: "3rem", height: "3rem" }} />
+            </Button>
             <Image src={Logo} width={150} height={150} />
             <Typography>어플을 클릭해주세요</Typography>
             <Button
@@ -116,6 +127,11 @@ export default function Talk() {
       {currPage === 4 && (
         <TalkPage3 handleNext={handleNext} handlers={handlers} />
       )}
+      <RecordingPopup
+        text={TTS_TEXT}
+        open={openSound}
+        handleClose={() => setOpenSound(false)}
+      />
       <CompletePopup
         handleClose={handleCloseComplete}
         open={completeModal}

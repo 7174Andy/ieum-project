@@ -15,6 +15,9 @@ export const createCustomTheme = (fontSize) => {
         primary: {
           main: "#529DAD",
         },
+        secondary: {
+          main: "#A2C4C9",
+        },
       },
       border: {
         main: "#50AEC3",

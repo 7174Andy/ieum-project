@@ -3,22 +3,30 @@
 import React, { useState } from "react";
 import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useTheme } from "@mui/material/styles";
 
 import Screen from "../../public/images/kakao-voice-page-1.png";
 
 import MissClickPopup from "../miss-click-popup";
 import { glow } from "../glow";
+import RecordingPopup from "../recording-popup";
+
+const TTS_TEXT =
+  "원하시는 사람과의 채팅을 클릭하면 나오는 화면입니다. 하단에 있는 화살표를 눌러주세요.";
 
 export default function TalkPage1({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const [openSound, setOpenSound] = useState(false);
 
   const handleMisClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
+      !event.target.closest(".headphone-button") &&
+      !openSound &&
       !openModal
     ) {
       setMissclickCount((prevCount) => prevCount + 1);
@@ -41,7 +49,7 @@ export default function TalkPage1({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         height: "100vh",
@@ -50,6 +58,13 @@ export default function TalkPage1({ handleNext, handlers }) {
       }}
       {...handlers}
     >
+      <Button
+        onClick={() => setOpenSound(true)}
+        className="headphone-button"
+        sx={{ position: "absolute", top: "1rem", right: "1rem" }}
+      >
+        <HeadphonesRoundedIcon sx={{ width: "3rem", height: "3rem" }} />
+      </Button>
       <Box
         onClick={handleNext}
         className="clickable-box"
@@ -58,8 +73,8 @@ export default function TalkPage1({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           padding: "4%",
-          bottom: "2%",
-          left: "-3%",
+          bottom: "5%",
+          left: "0%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>
@@ -75,6 +90,11 @@ export default function TalkPage1({ handleNext, handlers }) {
         <ArrowCircleRightOutlinedIcon sx={{ width: "3rem", height: "3rem" }} />
       </Button>
       <MissClickPopup handleClose={handleClose} open={openModal} />
+      <RecordingPopup
+        text={TTS_TEXT}
+        open={openSound}
+        handleClose={() => setOpenSound(false)}
+      />
     </Box>
   );
 }

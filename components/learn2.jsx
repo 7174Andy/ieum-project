@@ -135,7 +135,7 @@ export default function Learn2({ handleNext }) {
               "& .MuiSlider-thumb": {
                 height: "10px",
                 width: "10px",
-                backgroundColor: "#529DAD",
+                backgroundColor: `${theme.palette.blue.primary.main}`,
                 border: "1px solid white",
                 boxShadow: "none",
                 "&.Mui-active": {
@@ -145,11 +145,12 @@ export default function Learn2({ handleNext }) {
               },
               "& .MuiSlider-track": {
                 height: "4px",
-                backgroundColor: "#529DAD",
+                backgroundColor: `${theme.palette.blue.primary.main}`,
+                boxShadow: "none",
               },
               "& .MuiSlider-rail": {
                 height: "4px",
-                backgroundColor: "#A2C4C9",
+                backgroundColor: `${theme.palette.blue.secondary.main}`,
               },
             }}
           />
