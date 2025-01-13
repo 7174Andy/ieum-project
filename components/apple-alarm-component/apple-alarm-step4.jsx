@@ -1,16 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../../public/images/kakao-present-page-1.png";
+import Screen from "../../public/images/apple-alarm-page-4.png";
 
 import MissClickPopup from "../miss-click-popup";
 import { glow } from "../glow";
 
-export default function PresentPage1({ handleNext, handlers }) {
+export default function AppleAlarmPage4({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -46,7 +46,6 @@ export default function PresentPage1({ handleNext, handlers }) {
         backgroundPosition: "center",
         height: "100vh",
         width: "97vw",
-        position: "relative",
       }}
       {...handlers}
     >
@@ -57,9 +56,10 @@ export default function PresentPage1({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          p: "7%",
-          top: "36%",
-          left: "3%",
+          py: "6%",
+          px: "8%",
+          top: "22%",
+          right: "1%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>
