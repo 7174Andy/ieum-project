@@ -8,6 +8,7 @@ import { useTheme } from "@mui/material/styles";
 import Screen from "../../public/images/kakaopay-register-page-5.png";
 
 import MissClickPopup from "../miss-click-popup";
+import { glow } from "../glow";
 
 export default function RegisterPage5({ handleNext, handlers }) {
   const theme = useTheme();
@@ -59,6 +60,7 @@ export default function RegisterPage5({ handleNext, handlers }) {
           py: "5%",
           px: "48%",
           bottom: "10%",
+          animation: `${glow} 2s infinite`,
         }}
       ></Box>
       <Button

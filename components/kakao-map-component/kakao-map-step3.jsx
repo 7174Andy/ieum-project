@@ -8,6 +8,7 @@ import { useTheme } from "@mui/material/styles";
 import Screen from "../../public/images/kakao-map-page-3.png";
 
 import MissClickPopup from "../miss-click-popup";
+import { glow } from "../glow";
 
 export default function MapPage3({ handleNext, handlers }) {
   const theme = useTheme();
@@ -74,6 +75,7 @@ export default function MapPage3({ handleNext, handlers }) {
           py: "4%",
           px: "46%",
           top: "7%",
+          animation: `${step === 0 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
       <Typography
@@ -104,6 +106,7 @@ export default function MapPage3({ handleNext, handlers }) {
           py: "7%",
           px: "49%",
           bottom: "14%",
+          animation: `${step === 1 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
       <Typography

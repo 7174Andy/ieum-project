@@ -8,6 +8,7 @@ import { useTheme } from "@mui/material/styles";
 import Screen from "../../public/images/kakao-voice-page-2.png";
 
 import MissClickPopup from "../miss-click-popup";
+import { glow } from "../glow";
 
 export default function TransferPage2({ handleNext, handlers }) {
   const theme = useTheme();
@@ -46,6 +47,7 @@ export default function TransferPage2({ handleNext, handlers }) {
         height: "100vh",
         width: "97vw",
         position: "relative",
+        animation: `${glow} 2s infinite`,
       }}
       {...handlers}
     >

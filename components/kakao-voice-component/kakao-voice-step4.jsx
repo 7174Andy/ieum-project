@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
+import { glow } from "../glow";
 
 import Screen from "../../public/images/kakao-voice-message-page-3.png";
 
@@ -59,6 +60,7 @@ export default function VoicePage4({ handleNext, handlers }) {
           p: "4%",
           bottom: "11%",
           right: "0",
+          animation: `${glow} 2s infinite`,
         }}
       ></Box>
       <Button

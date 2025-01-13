@@ -8,6 +8,7 @@ import { useTheme } from "@mui/material/styles";
 import Screen from "../../public/images/kakao-pay-page-1.png";
 
 import MissClickPopup from "../miss-click-popup";
+import { glow } from "../glow";
 
 export default function KakaoPayPage1({ handleNext, handlers }) {
   const theme = useTheme();
@@ -59,6 +60,7 @@ export default function KakaoPayPage1({ handleNext, handlers }) {
           py: "8%",
           px: "45%",
           bottom: "7%",
+          animation: `${glow} 2s infinite`,
         }}
       ></Box>
       <Button

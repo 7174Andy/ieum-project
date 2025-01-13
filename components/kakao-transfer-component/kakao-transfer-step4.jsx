@@ -8,6 +8,7 @@ import { useTheme } from "@mui/material/styles";
 import Screen from "../../public/images/kakao-transfer-page-3.png";
 
 import MissClickPopup from "../miss-click-popup";
+import { glow } from "../glow";
 
 export default function TransferPage4({ handleNext, handlers }) {
   const theme = useTheme();
@@ -74,6 +75,7 @@ export default function TransferPage4({ handleNext, handlers }) {
           py: "33%",
           px: "45%",
           bottom: "13%",
+          animation: `${step === 0 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
       <Typography
@@ -104,6 +106,7 @@ export default function TransferPage4({ handleNext, handlers }) {
           py: "8%",
           px: "50%",
           bottom: "3%",
+          animation: `${step === 1 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
       <Typography

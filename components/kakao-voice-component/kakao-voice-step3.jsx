@@ -8,6 +8,7 @@ import { useTheme } from "@mui/material/styles";
 import Screen from "../../public/images/kakao-voice-message-page-2.png";
 
 import MissClickPopup from "../miss-click-popup";
+import { glow } from "../glow";
 
 export default function VoicePage3({ handleNext, handlers }) {
   const theme = useTheme();
@@ -58,6 +59,7 @@ export default function VoicePage3({ handleNext, handlers }) {
           borderRadius: "12px",
           p: "5%",
           bottom: "11%",
+          animation: `${glow} 2s infinite`,
         }}
       ></Box>
       <Button

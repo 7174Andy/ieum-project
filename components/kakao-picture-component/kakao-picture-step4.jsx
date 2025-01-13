@@ -8,6 +8,7 @@ import { useTheme } from "@mui/material/styles";
 import Screen from "../../public/images/kakao-picture-page-4.png";
 
 import MissClickPopup from "../miss-click-popup";
+import { glow } from "../glow";
 
 export default function PicturePage4({ handleNext, handlers }) {
   const theme = useTheme();
@@ -59,6 +60,7 @@ export default function PicturePage4({ handleNext, handlers }) {
           p: "3.5%",
           bottom: "41%",
           right: "-1%",
+          animation: `${glow} 2s infinite`,
         }}
       ></Box>
       <Button

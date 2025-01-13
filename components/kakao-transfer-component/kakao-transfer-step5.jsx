@@ -8,6 +8,7 @@ import { useTheme } from "@mui/material/styles";
 import Screen from "../../public/images/kakao-transfer-page-4.png";
 
 import MissClickPopup from "../miss-click-popup";
+import { glow } from "../glow";
 
 export default function TransferPage5({ handleNext, handlers }) {
   const theme = useTheme();
@@ -60,6 +61,7 @@ export default function TransferPage5({ handleNext, handlers }) {
           px: "30%",
           bottom: "7%",
           right: "1%",
+          animation: `${glow} 2s infinite`,
         }}
       ></Box>
       <Button

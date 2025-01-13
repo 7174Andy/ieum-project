@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
 import Screen from "../../public/images/kakao-picture-page-3.png";
 
 import MissClickPopup from "../miss-click-popup";
+import { glow } from "../glow";
 
 export default function PicturePage3({ handleNext, handlers }) {
   const theme = useTheme();
@@ -73,8 +74,27 @@ export default function PicturePage3({ handleNext, handlers }) {
           p: "3%",
           bottom: "30%",
           left: "31%",
+          animation: `${step === 0 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
+      <Typography
+        sx={{
+          position: "absolute",
+          bottom: "28%",
+          left: "25%",
+          transform: "translate(-50%, 50%)",
+          color: theme.palette.primary.main,
+          fontWeight: "bold",
+          fontSize: "1.5rem",
+          backgroundColor: "white",
+          padding: "0rem 0.75rem",
+          borderRadius: "50%",
+          textAlign: "center",
+          border: `4px solid ${theme.palette.primary.main}`,
+        }}
+      >
+        1
+      </Typography>
       <Box
         onClick={handleBottomBoxClick}
         className="clickable-box"
@@ -85,8 +105,27 @@ export default function PicturePage3({ handleNext, handlers }) {
           p: "3%",
           bottom: "30%",
           right: "16%",
+          animation: `${step === 1 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
+      <Typography
+        sx={{
+          position: "absolute",
+          bottom: "28%",
+          right: "15%",
+          transform: "translate(-50%, 50%)",
+          color: theme.palette.primary.main,
+          fontWeight: "bold",
+          fontSize: "1.5rem",
+          backgroundColor: "white",
+          padding: "0rem 0.75rem",
+          borderRadius: "50%",
+          textAlign: "center",
+          border: `4px solid ${theme.palette.primary.main}`,
+        }}
+      >
+        2
+      </Typography>
       <Button
         onClick={handleNext}
         className="arrow-button"

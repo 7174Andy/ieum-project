@@ -8,6 +8,7 @@ import { useTheme } from "@mui/material/styles";
 import Screen from "../../public/images/kakao-voice-page-1.png";
 
 import MissClickPopup from "../miss-click-popup";
+import { glow } from "../glow";
 
 export default function TalkPage1({ handleNext, handlers }) {
   const theme = useTheme();
@@ -59,6 +60,7 @@ export default function TalkPage1({ handleNext, handlers }) {
           padding: "4%",
           bottom: "2%",
           left: "-3%",
+          animation: `${glow} 2s infinite`,
         }}
       ></Box>
       <Button

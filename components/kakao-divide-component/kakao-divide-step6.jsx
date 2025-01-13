@@ -8,6 +8,7 @@ import { useTheme } from "@mui/material/styles";
 import Screen from "../../public/images/kakao-divide-page-6.png";
 
 import MissClickPopup from "../miss-click-popup";
+import { glow } from "../glow";
 
 export default function DividePage6({ handleNext, handlers }) {
   const theme = useTheme();
@@ -58,6 +59,7 @@ export default function DividePage6({ handleNext, handlers }) {
           borderRadius: "12px",
           p: "15%",
           top: "38%",
+          animation: `${glow} 2s infinite`,
         }}
       ></Box>
       <Button

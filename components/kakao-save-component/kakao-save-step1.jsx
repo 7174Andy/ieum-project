@@ -8,6 +8,7 @@ import { useTheme } from "@mui/material/styles";
 import Screen from "../../public/images/kakao-save-page-1.png";
 
 import MissClickPopup from "../miss-click-popup";
+import { glow } from "../glow";
 
 export default function SavePage1({ handleNext, handlers }) {
   const theme = useTheme();
@@ -60,6 +61,7 @@ export default function SavePage1({ handleNext, handlers }) {
           px: "35%",
           bottom: "10%",
           right: "1%",
+          animation: `${glow} 2s infinite`,
         }}
       ></Box>
       <Button

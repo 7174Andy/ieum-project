@@ -8,6 +8,7 @@ import { useTheme } from "@mui/material/styles";
 import Screen from "../../public/images/kakao-transfer-page-6.png";
 
 import MissClickPopup from "../miss-click-popup";
+import { glow } from "../glow";
 
 export default function DividePage3({ handleNext, handlers }) {
   const theme = useTheme();
@@ -59,6 +60,7 @@ export default function DividePage3({ handleNext, handlers }) {
           py: "8%",
           px: "49%",
           bottom: "24%",
+          animation: `${glow} 2s infinite`,
         }}
       ></Box>
       <Button

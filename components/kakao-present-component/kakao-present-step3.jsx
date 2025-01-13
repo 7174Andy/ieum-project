@@ -8,6 +8,7 @@ import { useTheme } from "@mui/material/styles";
 import Screen from "../../public/images/kakao-present-page-3.png";
 
 import MissClickPopup from "../miss-click-popup";
+import { glow } from "../glow";
 
 export default function PresentPage3({ handleNext, handlers }) {
   const theme = useTheme();
@@ -59,6 +60,7 @@ export default function PresentPage3({ handleNext, handlers }) {
           py: "18%",
           px: "50%",
           bottom: "16%",
+          animation: `${glow} 2s infinite`,
         }}
       ></Box>
       <Button

@@ -8,6 +8,7 @@ import { useTheme } from "@mui/material/styles";
 import Screen from "../../public/images/kakaopay-register-page-6.png";
 
 import MissClickPopup from "../miss-click-popup";
+import { glow } from "../glow";
 
 export default function RegisterPage6({ handleNext, handlers }) {
   const theme = useTheme();
@@ -85,6 +86,7 @@ export default function RegisterPage6({ handleNext, handlers }) {
           py: "8%",
           px: "46%",
           top: "18%",
+          animation: `${step === 0 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
       <Typography
@@ -115,6 +117,7 @@ export default function RegisterPage6({ handleNext, handlers }) {
           py: "8%",
           px: "46%",
           top: "28%",
+          animation: `${step === 1 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
       <Typography
@@ -145,6 +148,7 @@ export default function RegisterPage6({ handleNext, handlers }) {
           py: "8%",
           px: "46%",
           bottom: "1%",
+          animation: `${step === 2 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
       <Typography

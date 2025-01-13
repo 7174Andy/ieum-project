@@ -8,6 +8,7 @@ import { useTheme } from "@mui/material/styles";
 import Screen from "../../public/images/kakao-friend-page-1.png";
 
 import MissClickPopup from "../miss-click-popup";
+import { glow } from "../glow";
 
 export default function FriendPage1({ handleNext, handlers }) {
   const theme = useTheme();
@@ -59,6 +60,7 @@ export default function FriendPage1({ handleNext, handlers }) {
           py: "7%",
           px: "50%",
           top: "53%",
+          animation: `${glow} 2s infinite`,
         }}
       ></Box>
       <Button
