@@ -37,7 +37,7 @@ export default function DownloadApp() {
     if (currPage > 1) {
       setCurrPage(currPage - 1);
     } else if (currPage === 1) {
-      router.push("/financial");
+      router.push("/android");
     }
   };
 
