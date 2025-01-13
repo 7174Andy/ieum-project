@@ -81,9 +81,9 @@ export default function Android() {
             <Button variant="contained" sx={{ flex: 1 }}>
               <Typography
                 sx={{ color: "white" }}
-                onClick={() => router.push("/android-stopwatch")}
+                onClick={() => router.push("/android-timer")}
               >
-                스톱워치
+                타이머
               </Typography>
             </Button>
           </Box>
