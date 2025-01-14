@@ -51,7 +51,7 @@ export default function TalkPage1({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -82,7 +82,7 @@ export default function TalkPage1({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           padding: "4%",
-          bottom: "5%",
+          bottom: "2%",
           left: "0%",
           animation: `${glow} 2s infinite`,
         }}
