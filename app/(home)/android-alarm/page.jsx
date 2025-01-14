@@ -15,11 +15,12 @@ import AndroidAlarmPage1 from "../../../components/android-alarm-component/andro
 import AndroidAlarmPage2 from "../../../components/android-alarm-component/android-alarm-step2";
 import AndroidAlarmPage3 from "../../../components/android-alarm-component/android-alarm-step3";
 import AndroidAlarmPage4 from "../../../components/android-alarm-component/android-alarm-step4";
+import AndroidAlarmPage5 from "../../../components/android-alarm-component/android-alarm-step5";
 import CompletePopup from "../../../components/complete-popup";
 import RecordingPopup from "../../../components/recording-popup";
 import { useRouter } from "next/navigation";
 
-const pageNum = 5;
+const pageNum = 6;
 const TTS_TEXT = "알람 설정 방법을 배워보겠습니다.";
 
 export default function AndroidAlarm() {
@@ -139,6 +140,9 @@ export default function AndroidAlarm() {
       )}
       {currPage === 5 && (
         <AndroidAlarmPage4 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 6 && (
+        <AndroidAlarmPage5 handleNext={handleNext} handlers={handlers} />
       )}
       <CompletePopup
         handleClose={handleCloseComplete}

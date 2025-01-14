@@ -5,24 +5,30 @@ import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useSwipeable } from "react-swipeable";
 
 import Logo from "../../../public/images/android-alarm-logo.png";
 
 import HelpPopup from "../../../components/help-popup";
 import AndroidAlarmPage1 from "../../../components/android-alarm-component/android-alarm-step1";
+import AndroidTimerPage1 from "../../../components/android-timer-component/android-timer-step1";
 import AndroidTimerPage2 from "../../../components/android-timer-component/android-timer-step2";
 import AndroidTimerPage3 from "../../../components/android-timer-component/android-timer-step3";
 import AndroidTimerPage4 from "../../../components/android-timer-component/android-timer-step4";
+import AndroidTimerPage5 from "../../../components/android-timer-component/android-timer-step5";
 import CompletePopup from "../../../components/complete-popup";
+import RecordingPopup from "../../../components/recording-popup";
 import { useRouter } from "next/navigation";
 
-const pageNum = 5;
+const pageNum = 7;
+const TTS_TEXT = "타이머 설정 방법을 배워보겠습니다. ";
 
 export default function AndroidTimer() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
+  const [openSound, setOpenSound] = useState(false);
   const router = useRouter();
 
   const handleNext = () => {
@@ -87,6 +93,22 @@ export default function AndroidTimer() {
               overflow: "hidden",
             }}
           >
+            <Button
+              onClick={() => setOpenSound(true)}
+              className="headphone-button"
+              sx={{
+                position: "absolute",
+                top: "1rem",
+                right: "1rem",
+              }}
+            >
+              <HeadphonesRoundedIcon
+                sx={{
+                  width: "3rem",
+                  height: "3rem",
+                }}
+              />
+            </Button>
             <Image src={Logo} width={150} height={150} />
             <Typography>어플을 클릭해주세요</Typography>
             <Button
@@ -112,13 +134,19 @@ export default function AndroidTimer() {
         <AndroidAlarmPage1 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 3 && (
-        <AndroidTimerPage2 handleNext={handleNext} handlers={handlers} />
+        <AndroidTimerPage1 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 4 && (
-        <AndroidTimerPage3 handleNext={handleNext} handlers={handlers} />
+        <AndroidTimerPage2 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 5 && (
+        <AndroidTimerPage3 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 6 && (
         <AndroidTimerPage4 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 7 && (
+        <AndroidTimerPage5 handleNext={handleNext} handlers={handlers} />
       )}
       <CompletePopup
         handleClose={handleCloseComplete}
@@ -126,6 +154,11 @@ export default function AndroidTimer() {
         handleAgain={handleAgain}
         router={router}
         url={"/android"}
+      />
+      <RecordingPopup
+        text={TTS_TEXT}
+        handleClose={() => setOpenSound(false)}
+        open={openSound}
       />
     </>
   );

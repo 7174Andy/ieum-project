@@ -13,7 +13,7 @@ import RecordingPopup from "../recording-popup";
 import { glow } from "../glow";
 
 const TTS_TEXT =
-  "알람 추가 화면에서 시간 조정 영역이 노란 상자로 강조되어 있습니다. 시간을 조정하려면 원하는 시간으로 숫자를 위 아래로 넘기거나 눌러 설정하세요. 오전/오후를 선택하는 옵션도 확인하세요.";
+  '알람 추가 화면에서 시간 조정 영역이 노란 상자로 강조되어 있습니다. 시간을 조정하려면 원하는 시간으로 숫자를 위 아래로 넘기거나 눌러 설정하세요. 오전/오후를 선택하는 옵션도 확인하세요. 5.	아래쪽에서 알람이 울릴 요일을 선택하거나 알람에 이름을 부여할 수 있습니다. 예를 들어 "출근 알람"처럼 입력하여 구별할 수 있습니다. 설정이 완료되면 "저장" 버튼을 클릭하세요.';
 
 export default function AndroidAlarmPage3({ handleNext, handlers }) {
   const theme = useTheme();

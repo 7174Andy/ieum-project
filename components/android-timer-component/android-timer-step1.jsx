@@ -6,16 +6,16 @@ import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOu
 import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../../public/images/android-alarm-page-4.png";
+import Screen from "../../public/images/android-timer-page-2.png";
 
 import MissClickPopup from "../miss-click-popup";
 import RecordingPopup from "../recording-popup";
 import { glow } from "../glow";
 
 const TTS_TEXT =
-  '6.	저장 후 메인 화면으로 돌아오면 설정한 알람이 표시됩니다. 노란 상자는 추가된 알람 정보를 강조합니다. 필요한 경우 "+" 버튼을 클릭하여 다른 알람을 추가할 수도 있습니다';
+  '시계 어플 화면 하단의 메뉴에서 "타이머" 탭을 선택합니다. 타이머 설정 화면으로 이동하면 시간을 조정할 수 있는 화면이 나타납니다.';
 
-export default function AndroidAlarmPage4({ handleNext, handlers }) {
+export default function AndroidTimerPage1({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -75,38 +75,16 @@ export default function AndroidAlarmPage4({ handleNext, handlers }) {
         />
       </Button>
       <Box
-        className="clickable-box"
-        sx={{
-          position: "absolute",
-          border: `5px solid ${theme.palette.primary.main}`,
-          borderRadius: "12px",
-          p: "5%",
-          top: "16%",
-          right: "16%",
-        }}
-      ></Box>
-      <Box
-        className="clickable-box"
-        sx={{
-          position: "absolute",
-          border: `5px solid ${theme.palette.primary.main}`,
-          borderRadius: "12px",
-          py: "15%",
-          px: "48%",
-          top: "24%",
-        }}
-      ></Box>
-      <Box
         onClick={handleNext}
         className="clickable-box"
         sx={{
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "5%",
-          px: "8%",
-          top: "29%",
-          right: "5%",
+          py: "6%",
+          px: "10%",
+          bottom: "12%",
+          right: "3%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>
