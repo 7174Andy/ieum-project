@@ -5,6 +5,7 @@ import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useSwipeable } from "react-swipeable";
 
 import Logo from "../../../public/images/android-message-logo.png";
@@ -16,14 +17,17 @@ import AndroidMessagePage3 from "../../../components/android-message-component/a
 import AndroidMessagePage4 from "../../../components/android-message-component/android-message-step4";
 import AndroidMessagePage5 from "../../../components/android-message-component/android-message-step5";
 import CompletePopup from "../../../components/complete-popup";
+import RecordingPopup from "../../../components/recording-popup";
 import { useRouter } from "next/navigation";
 
 const pageNum = 6;
+const TTS_TEXT = "메시지를 보내는 방법을 배워보겠습니다.";
 
 export default function AndroidAlarm() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
+  const [openSound, setOpenSound] = useState(false);
   const router = useRouter();
 
   const handleNext = () => {
@@ -88,6 +92,22 @@ export default function AndroidAlarm() {
               overflow: "hidden",
             }}
           >
+            <Button
+              onClick={() => setOpenSound(true)}
+              className="headphone-button"
+              sx={{
+                position: "absolute",
+                top: "1rem",
+                right: "1rem",
+              }}
+            >
+              <HeadphonesRoundedIcon
+                sx={{
+                  width: "3rem",
+                  height: "3rem",
+                }}
+              />
+            </Button>
             <Image
               src={Logo}
               alt="android-message-logo"
@@ -135,6 +155,11 @@ export default function AndroidAlarm() {
         handleAgain={handleAgain}
         router={router}
         url={"/android"}
+      />
+      <RecordingPopup
+        text={TTS_TEXT}
+        handleClose={() => setOpenSound(false)}
+        open={openSound}
       />
     </>
   );
