@@ -73,7 +73,10 @@ export default function Apple() {
             <Button variant="contained" sx={{ flex: 1 }}>
               <Typography
                 sx={{ color: "white" }}
-                onClick={() => router.push("/apple-alarm")}
+                onClick={() => {
+                  console.log("clicked");
+                  router.push("/apple-alarm");
+                }}
               >
                 알람
               </Typography>

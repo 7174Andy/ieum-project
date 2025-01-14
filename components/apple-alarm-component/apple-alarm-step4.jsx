@@ -3,22 +3,30 @@
 import React, { useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useTheme } from "@mui/material/styles";
 
 import Screen from "../../public/images/apple-alarm-page-4.png";
 
 import MissClickPopup from "../miss-click-popup";
+import RecordingPopup from "../recording-popup";
 import { glow } from "../glow";
+
+const TTS_TEXT =
+  "저장 후 메인 알람 화면에서 새로 추가된 알람 옆의 스위치가 노란 상자로 강조됩니다. 스위치를 켜면 알람이 활성화됩니다.";
 
 export default function AppleAlarmPage4({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const [openSound, setOpenSound] = useState(false);
 
   const handleMisClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
+      !event.target.closest(".headphone-button") &&
+      !soundOpen &&
       !openModal
     ) {
       setMissclickCount((prevCount) => prevCount + 1);
@@ -49,6 +57,22 @@ export default function AppleAlarmPage4({ handleNext, handlers }) {
       }}
       {...handlers}
     >
+      <Button
+        onClick={() => setOpenSound(true)}
+        className="headphone-button"
+        sx={{
+          position: "absolute",
+          top: "1rem",
+          right: "1rem",
+        }}
+      >
+        <HeadphonesRoundedIcon
+          sx={{
+            width: "3rem",
+            height: "3rem",
+          }}
+        />
+      </Button>
       <Box
         onClick={handleNext}
         className="clickable-box"
@@ -71,6 +95,11 @@ export default function AppleAlarmPage4({ handleNext, handlers }) {
         <ArrowCircleRightOutlinedIcon sx={{ width: "3rem", height: "3rem" }} />
       </Button>
       <MissClickPopup handleClose={handleClose} open={openModal} />
+      <RecordingPopup
+        text={TTS_TEXT}
+        handleClose={() => setOpenSound(false)}
+        open={openSound}
+      />
     </Box>
   );
 }

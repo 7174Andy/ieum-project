@@ -3,23 +3,31 @@
 import React, { useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useTheme } from "@mui/material/styles";
 
 import Screen from "../../public/images/apple-alarm-page-2.png";
 
 import MissClickPopup from "../miss-click-popup";
+import RecordingPopup from "../recording-popup";
 import { glow } from "../glow";
+
+const TTS_TEXT =
+  '알람 추가 화면에서 시간 설정 부분이 노란 상자로 강조되어 있습니다. 원하는 시간을 입력한 뒤, 반복 요일 및 알람 소리 옵션을 설정할 수 있습니다. 설정 후 "저장" 버튼을 클릭하세요.';
 
 export default function AppleAlarmPage2({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const [openSound, setOpenSound] = useState(false);
   const [step, setStep] = useState(0);
 
   const handleMisClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
+      !event.target.closest(".headphone-button") &&
+      !openSound &&
       !openModal
     ) {
       setMissclickCount((prevCount) => prevCount + 1);
@@ -64,6 +72,22 @@ export default function AppleAlarmPage2({ handleNext, handlers }) {
       }}
       {...handlers}
     >
+      <Button
+        onClick={() => setOpenSound(true)}
+        className="headphone-button"
+        sx={{
+          position: "absolute",
+          top: "1rem",
+          right: "1rem",
+        }}
+      >
+        <HeadphonesRoundedIcon
+          sx={{
+            width: "3rem",
+            height: "3rem",
+          }}
+        />
+      </Button>
       <Box
         onClick={handleTopBoxClick}
         className="clickable-box"
@@ -135,6 +159,11 @@ export default function AppleAlarmPage2({ handleNext, handlers }) {
         <ArrowCircleRightOutlinedIcon sx={{ width: "3rem", height: "3rem" }} />
       </Button>
       <MissClickPopup handleClose={handleClose} open={openModal} />
+      <RecordingPopup
+        text={TTS_TEXT}
+        handleClose={() => setOpenSound(false)}
+        open={openSound}
+      />
     </Box>
   );
 }

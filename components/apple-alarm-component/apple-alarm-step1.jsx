@@ -3,23 +3,31 @@
 import React, { useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useTheme } from "@mui/material/styles";
 
 import Screen from "../../public/images/apple-alarm-page-1.png";
 
 import MissClickPopup from "../miss-click-popup";
+import RecordingPopup from "../recording-popup";
 import { glow } from "../glow";
+
+const TTS_TEXT =
+  '알람 화면 하단에서 "+" 버튼이 노란 상자로 표시됩니다. 새로운 알람을 추가하려면 해당 버튼을 클릭하세요.';
 
 export default function AppleAlarmPage1({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const [openSound, setOpenSound] = useState(false);
   const [step, setStep] = useState(0);
 
   const handleMisClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
+      !event.target.closest(".headphone-button") &&
+      !openSound &&
       !openModal
     ) {
       setMissclickCount((prevCount) => prevCount + 1);
@@ -64,6 +72,22 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
       }}
       {...handlers}
     >
+      <Button
+        onClick={() => setOpenSound(true)}
+        className="headphone-button"
+        sx={{
+          position: "absolute",
+          top: "1rem",
+          right: "1rem",
+        }}
+      >
+        <HeadphonesRoundedIcon
+          sx={{
+            width: "3rem",
+            height: "3rem",
+          }}
+        />
+      </Button>
       <Box
         onClick={handleTopBoxClick}
         className="clickable-box"
@@ -71,9 +95,8 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "9%",
-          px: "8%",
-          bottom: "0%",
+          p: "7%",
+          bottom: "3%",
           right: "54%",
           animation: `${step === 0 ? glow : ""} 2s infinite`,
         }}
@@ -104,7 +127,7 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "5%",
-          top: "3%",
+          top: "4%",
           right: "0%",
           animation: `${step === 1 ? glow : ""} 2s infinite`,
         }}
@@ -113,7 +136,7 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
         sx={{
           position: "absolute",
           top: "6%",
-          right: "0%",
+          right: "10%",
           transform: "translate(-50%, 50%)",
           color: theme.palette.primary.main,
           fontWeight: "bold",
@@ -135,6 +158,11 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
         <ArrowCircleRightOutlinedIcon sx={{ width: "3rem", height: "3rem" }} />
       </Button>
       <MissClickPopup handleClose={handleClose} open={openModal} />
+      <RecordingPopup
+        text={TTS_TEXT}
+        handleClose={() => setOpenSound(false)}
+        open={openSound}
+      />
     </Box>
   );
 }
