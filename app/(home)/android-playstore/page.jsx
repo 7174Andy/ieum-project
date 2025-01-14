@@ -5,6 +5,7 @@ import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useSwipeable } from "react-swipeable";
 
 import Logo from "../../../public/images/googleplay-logo.png";
@@ -15,14 +16,18 @@ import AndroidStorePage2 from "../../../components/android-store-component/andro
 import AndroidStorePage3 from "../../../components/android-store-component/android-store-step3";
 import AndroidStorePage4 from "../../../components/android-store-component/android-store-step4";
 import CompletePopup from "../../../components/complete-popup";
+import RecordingPopup from "../../../components/recording-popup";
 import { useRouter } from "next/navigation";
 
 const pageNum = 5;
+const TTS_TEXT =
+  "어플 설치 방법을 배워보겠습니다. 화면에 보이는 어플을 찾아 실행해주세요.";
 
 export default function DownloadApp() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
+  const [openSound, setOpenSound] = useState(false);
   const router = useRouter();
 
   const handleNext = () => {
@@ -87,6 +92,22 @@ export default function DownloadApp() {
               overflow: "hidden",
             }}
           >
+            <Button
+              onClick={() => setOpenSound(true)}
+              className="headphone-button"
+              sx={{
+                position: "absolute",
+                top: "1rem",
+                right: "1rem",
+              }}
+            >
+              <HeadphonesRoundedIcon
+                sx={{
+                  width: "3rem",
+                  height: "3rem",
+                }}
+              />
+            </Button>
             <Image src={Logo} width={150} height={150} />
             <Typography>어플을 클릭해주세요</Typography>
             <Button
@@ -126,6 +147,11 @@ export default function DownloadApp() {
         handleAgain={handleAgain}
         router={router}
         url={"/android"}
+      />
+      <RecordingPopup
+        text={TTS_TEXT}
+        handleClose={() => setOpenSound(false)}
+        open={openSound}
       />
     </>
   );
