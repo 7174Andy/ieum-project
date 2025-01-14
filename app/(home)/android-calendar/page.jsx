@@ -5,6 +5,7 @@ import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useSwipeable } from "react-swipeable";
 
 import Logo from "../../../public/images/android-calendar-logo.png";
@@ -17,14 +18,17 @@ import AndroidCalendarStep4 from "../../../components/android-calendar-component
 import AndroidCalendarStep5 from "../../../components/android-calendar-component/android-calendar-step5";
 import AndroidCalendarStep6 from "../../../components/android-calendar-component/android-calendar-step6";
 import CompletePopup from "../../../components/complete-popup";
+import RecordingPopup from "../../../components/recording-popup";
 import { useRouter } from "next/navigation";
 
 const pageNum = 7;
+const TTS_TEXT = "달력을 사용해 중요한 일정을 저장하는 방법을 배워보겠습니다. ";
 
 export default function AndroidAlarm() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
+  const [openSound, setOpenSound] = useState(false);
   const router = useRouter();
 
   const handleNext = () => {
@@ -89,6 +93,22 @@ export default function AndroidAlarm() {
               overflow: "hidden",
             }}
           >
+            <Button
+              onClick={() => setOpenSound(true)}
+              className="headphone-button"
+              sx={{
+                position: "absolute",
+                top: "1rem",
+                right: "1rem",
+              }}
+            >
+              <HeadphonesRoundedIcon
+                sx={{
+                  width: "3rem",
+                  height: "3rem",
+                }}
+              />
+            </Button>
             <Image src={Logo} width={150} height={150} />
             <Typography>어플을 클릭해주세요</Typography>
             <Button
@@ -134,6 +154,11 @@ export default function AndroidAlarm() {
         handleAgain={handleAgain}
         router={router}
         url={"/android"}
+      />
+      <RecordingPopup
+        text={TTS_TEXT}
+        handleClose={() => setOpenSound(false)}
+        open={openSound}
       />
     </>
   );
