@@ -3,22 +3,30 @@
 import React, { useState } from "react";
 import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useTheme } from "@mui/material/styles";
 
 import Screen from "../../public/images/kakao-voice-page-3.png";
 
 import MissClickPopup from "../miss-click-popup";
+import RecordingPopup from "../recording-popup";
 import { glow } from "../glow";
+
+const TTS_TEXT =
+  "보이스톡은 전화하기, 페이스톡은 영상통화가 실행됩니다. 둘 중 하나를 골라주세요.";
 
 export default function TalkPage3({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const [openSound, setOpenSound] = useState(false);
 
   const handleMisClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
+      !event.target.closest(".headphone-button") &&
+      !openSound &&
       !openModal
     ) {
       setMissclickCount((prevCount) => prevCount + 1);
@@ -50,6 +58,15 @@ export default function TalkPage3({ handleNext, handlers }) {
       }}
       {...handlers}
     >
+      <Button
+        onClick={() => setOpenSound(true)}
+        className="headphone-button"
+        sx={{ position: "absolute", top: "1rem", right: "1rem" }}
+      >
+        <HeadphonesRoundedIcon
+          sx={{ width: "3rem", height: "3rem", color: "#529DAD" }}
+        />
+      </Button>
       <Box
         onClick={handleNext}
         className="clickable-box"
@@ -72,6 +89,11 @@ export default function TalkPage3({ handleNext, handlers }) {
         <ArrowCircleRightOutlinedIcon sx={{ width: "3rem", height: "3rem" }} />
       </Button>
       <MissClickPopup handleClose={handleClose} open={openModal} />
+      <RecordingPopup
+        open={openSound}
+        handleClose={() => setOpenSound(false)}
+        text={TTS_TEXT}
+      />
     </Box>
   );
 }

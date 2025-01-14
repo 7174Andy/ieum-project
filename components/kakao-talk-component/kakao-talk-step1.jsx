@@ -61,9 +61,18 @@ export default function TalkPage1({ handleNext, handlers }) {
       <Button
         onClick={() => setOpenSound(true)}
         className="headphone-button"
-        sx={{ position: "absolute", top: "1rem", right: "1rem" }}
+        sx={{
+          position: "absolute",
+          top: "1rem",
+          right: "1rem",
+        }}
       >
-        <HeadphonesRoundedIcon sx={{ width: "3rem", height: "3rem" }} />
+        <HeadphonesRoundedIcon
+          sx={{
+            width: "3rem",
+            height: "3rem",
+          }}
+        />
       </Button>
       <Box
         onClick={handleNext}
