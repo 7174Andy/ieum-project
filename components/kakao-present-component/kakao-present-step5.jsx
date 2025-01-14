@@ -3,19 +3,25 @@
 import React, { useState } from "react";
 import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useTheme } from "@mui/material/styles";
 
 import Screen from "../../public/images/kakao-present-page-5.png";
 
 import MissClickPopup from "../miss-click-popup";
+import RecordingPopup from "../recording-popup";
 import { glow } from "../glow";
+
+const TTS_TEXT =
+  "위에 “1”이라고 표시된 부분에 수량을 선택하고 선물하기를 누르면, 친구를 검색해서 선물할 수 있습니다.";
 
 export default function PresentPage5({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
+  const [openSound, setOpenSound] = useState(false);
 
-  const handleMisClick = (event) => {
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -35,21 +41,37 @@ export default function PresentPage5({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
         position: "relative",
       }}
       {...handlers}
     >
+      <Button
+        onClick={() => setOpenSound(true)}
+        className="headphone-button"
+        sx={{
+          position: "absolute",
+          top: "1rem",
+          right: "1rem",
+        }}
+      >
+        <HeadphonesRoundedIcon
+          sx={{
+            width: "3rem",
+            height: "3rem",
+          }}
+        />
+      </Button>
       <Box
         onClick={handleNext}
         className="clickable-box"
@@ -72,6 +94,11 @@ export default function PresentPage5({ handleNext, handlers }) {
         <ArrowCircleRightOutlinedIcon sx={{ width: "3rem", height: "3rem" }} />
       </Button>
       <MissClickPopup handleClose={handleClose} open={openModal} />
+      <RecordingPopup
+        text={TTS_TEXT}
+        open={openSound}
+        handleClose={() => setOpenSound(false)}
+      />
     </Box>
   );
 }
