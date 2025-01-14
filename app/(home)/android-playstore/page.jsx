@@ -108,7 +108,12 @@ export default function DownloadApp() {
                 }}
               />
             </Button>
-            <Image src={Logo} width={150} height={150} />
+            <Image
+              src={Logo}
+              alt="android-playstore-logo"
+              width={150}
+              height={150}
+            />
             <Typography>어플을 클릭해주세요</Typography>
             <Button
               sx={{ marginTop: "2rem" }}

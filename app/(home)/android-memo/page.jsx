@@ -5,6 +5,7 @@ import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useSwipeable } from "react-swipeable";
 
 import Logo from "../../../public/images/android-memo-logo.png";
@@ -19,14 +20,17 @@ import AndroidMemoPage6 from "../../../components/android-memo-component/android
 import AndroidMemoPage7 from "../../../components/android-memo-component/android-memo-step7";
 import AndroidMemoPage8 from "../../../components/android-memo-component/android-memo-step8";
 import CompletePopup from "../../../components/complete-popup";
+import RecordingPopup from "../../../components/recording-popup";
 import { useRouter } from "next/navigation";
 
 const pageNum = 9;
+const TTS_TEXT = "메모 사용 방법을 배워보겠습니다.";
 
 export default function AndroidAlarm() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
+  const [openSound, setOpenSound] = useState(false);
   const router = useRouter();
 
   const handleNext = () => {
@@ -91,7 +95,28 @@ export default function AndroidAlarm() {
               overflow: "hidden",
             }}
           >
-            <Image src={Logo} width={150} height={150} />
+            <Button
+              onClick={() => setOpenSound(true)}
+              className="headphone-button"
+              sx={{
+                position: "absolute",
+                top: "1rem",
+                right: "1rem",
+              }}
+            >
+              <HeadphonesRoundedIcon
+                sx={{
+                  width: "3rem",
+                  height: "3rem",
+                }}
+              />
+            </Button>
+            <Image
+              src={Logo}
+              alt="android-memo-logo"
+              width={150}
+              height={150}
+            />
             <Typography>어플을 클릭해주세요</Typography>
             <Button
               sx={{ marginTop: "2rem" }}
@@ -142,6 +167,11 @@ export default function AndroidAlarm() {
         handleAgain={handleAgain}
         router={router}
         url={"/android"}
+      />
+      <RecordingPopup
+        text={TTS_TEXT}
+        handleClose={() => setOpenSound(false)}
+        open={openSound}
       />
     </>
   );
