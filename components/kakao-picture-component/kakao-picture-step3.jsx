@@ -3,18 +3,24 @@
 import React, { useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useTheme } from "@mui/material/styles";
 
 import Screen from "../../public/images/kakao-picture-page-3.png";
 
 import MissClickPopup from "../miss-click-popup";
+import RecordingPopup from "../recording-popup";
 import { glow } from "../glow";
+
+const TTS_TEXT =
+  "전송을 원하시는 사진을 눌러주세요. 하단에 있는 전체를 누르면 전체 사진첩이 보입니다.";
 
 export default function PicturePage3({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
   const [steps, setSteps] = useState(0);
+  const [openSound, setOpenSound] = useState(false);
 
   const handleMisClick = (event) => {
     if (
@@ -65,6 +71,22 @@ export default function PicturePage3({ handleNext, handlers }) {
       }}
       {...handlers}
     >
+      <Button
+        onClick={() => setOpenSound(true)}
+        className="headphone-button"
+        sx={{
+          position: "absolute",
+          top: "1rem",
+          right: "1rem",
+        }}
+      >
+        <HeadphonesRoundedIcon
+          sx={{
+            width: "3rem",
+            height: "3rem",
+          }}
+        />
+      </Button>
       <Box
         onClick={handleTopBoxClick}
         className="clickable-box"
@@ -75,7 +97,7 @@ export default function PicturePage3({ handleNext, handlers }) {
           p: "3%",
           bottom: "30%",
           left: "31%",
-          animation: `${step === 0 ? `${glow} 2s infinite` : "none"}`,
+          animation: `${steps === 0 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
       <Typography
@@ -106,7 +128,7 @@ export default function PicturePage3({ handleNext, handlers }) {
           p: "3%",
           bottom: "30%",
           right: "16%",
-          animation: `${step === 1 ? `${glow} 2s infinite` : "none"}`,
+          animation: `${steps === 1 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
       <Typography
@@ -135,6 +157,11 @@ export default function PicturePage3({ handleNext, handlers }) {
         <ArrowCircleRightOutlinedIcon sx={{ width: "3rem", height: "3rem" }} />
       </Button>
       <MissClickPopup handleClose={handleClose} open={openModal} />
+      <RecordingPopup
+        text={TTS_TEXT}
+        open={openSound}
+        handleClose={() => setOpenSound(false)}
+      />
     </Box>
   );
 }
