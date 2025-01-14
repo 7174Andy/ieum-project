@@ -5,6 +5,7 @@ import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useSwipeable } from "react-swipeable";
 
 import Logo from "../../../public/images/android-picture-logo.png";
@@ -15,14 +16,17 @@ import AndroidPhotoPage2 from "../../../components/android-photo-component/andro
 import AndroidPhotoPage3 from "../../../components/android-photo-component/android-photo-step3";
 import AndroidPhotoPage4 from "../../../components/android-photo-component/android-photo-step4";
 import CompletePopup from "../../../components/complete-popup";
+import RecordingPopup from "../../../components/recording-popup";
 import { useRouter } from "next/navigation";
 
 const pageNum = 5;
+const TTS_TEXT = "사진 전송 방법을 배워보겠습니다";
 
 export default function AndroidPhoto() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
+  const [openSound, setOpenSound] = useState(false);
   const router = useRouter();
 
   const handleNext = () => {
@@ -87,6 +91,22 @@ export default function AndroidPhoto() {
               overflow: "hidden",
             }}
           >
+            <Button
+              onClick={() => setOpenSound(true)}
+              className="headphone-button"
+              sx={{
+                position: "absolute",
+                top: "1rem",
+                right: "1rem",
+              }}
+            >
+              <HeadphonesRoundedIcon
+                sx={{
+                  width: "3rem",
+                  height: "3rem",
+                }}
+              />
+            </Button>
             <Image
               src={Logo}
               alt="android-photo-logo"
@@ -131,6 +151,11 @@ export default function AndroidPhoto() {
         handleAgain={handleAgain}
         router={router}
         url={"/android"}
+      />
+      <RecordingPopup
+        text={TTS_TEXT}
+        handleClose={() => setOpenSound(false)}
+        open={openSound}
       />
     </>
   );
