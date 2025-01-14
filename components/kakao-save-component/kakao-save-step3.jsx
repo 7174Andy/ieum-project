@@ -3,18 +3,23 @@
 import React, { useState } from "react";
 import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useTheme } from "@mui/material/styles";
 
 import Screen from "../../public/images/kakao-save-page-3.png";
 
 import MissClickPopup from "../miss-click-popup";
+import RecordingPopup from "../recording-popup";
 import { glow } from "../glow";
+
+const TTS_TEXT =
+  "묶음사진을 전체 저장하거나 방금 보신 하나의 사진만 저장할 수도 있습니다. 둘 중 하나를 선택해주세요.";
 
 export default function SavePage3({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
-  const [step, setStep] = useState(0);
+  const [openSound, setOpenSound] = useState(false);
 
   const handleMisClick = (event) => {
     if (
@@ -51,6 +56,13 @@ export default function SavePage3({ handleNext, handlers }) {
       }}
       {...handlers}
     >
+      <Button
+        onClick={() => setOpenSound(true)}
+        className="headphone-button"
+        sx={{ position: "absolute", top: "1rem", right: "1rem" }}
+      >
+        <HeadphonesRoundedIcon sx={{ width: "3rem", height: "3rem" }} />
+      </Button>
       <Box
         onClick={handleNext}
         className="clickable-box"
@@ -72,6 +84,11 @@ export default function SavePage3({ handleNext, handlers }) {
         <ArrowCircleRightOutlinedIcon sx={{ width: "3rem", height: "3rem" }} />
       </Button>
       <MissClickPopup handleClose={handleClose} open={openModal} />
+      <RecordingPopup
+        open={openSound}
+        handleClose={() => setOpenSound(false)}
+        text={TTS_TEXT}
+      />
     </Box>
   );
 }

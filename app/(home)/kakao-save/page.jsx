@@ -5,6 +5,7 @@ import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useSwipeable } from "react-swipeable";
 
 import Logo from "../../../public/images/kakao-app-logo.png";
@@ -14,14 +15,18 @@ import SavePage1 from "../../../components/kakao-save-component/kakao-save-step1
 import SavePage2 from "../../../components/kakao-save-component/kakao-save-step2";
 import SavePage3 from "../../../components/kakao-save-component/kakao-save-step3";
 import CompletePopup from "../../../components/complete-popup";
+import RecordingPopup from "../../../components/recording-popup";
 import { useRouter } from "next/navigation";
 
 const pageNum = 4;
+const TTS_TEXT =
+  "카카오톡으로 받은 사진을 저장하는 방법을 배워보겠습니다. 화면에 보이는 어플을 찾아 실행해주세요.";
 
 export default function Save() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
+  const [openSound, setOpenSound] = useState(false);
   const router = useRouter();
 
   const handleNext = () => {
@@ -86,6 +91,13 @@ export default function Save() {
               overflow: "hidden",
             }}
           >
+            <Button
+              onClick={() => setOpenSound(true)}
+              className="headphone-button"
+              sx={{ position: "absolute", top: "1rem", right: "1rem" }}
+            >
+              <HeadphonesRoundedIcon sx={{ width: "3rem", height: "3rem" }} />
+            </Button>
             <Image src={Logo} width={150} height={150} />
             <Typography>어플을 클릭해주세요</Typography>
             <Button
@@ -122,6 +134,11 @@ export default function Save() {
         handleAgain={handleAgain}
         router={router}
         url={"/kakao"}
+      />
+      <RecordingPopup
+        open={openSound}
+        handleClose={() => setOpenSound(false)}
+        text={TTS_TEXT}
       />
     </>
   );
