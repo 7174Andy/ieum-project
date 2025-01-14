@@ -5,6 +5,7 @@ import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useSwipeable } from "react-swipeable";
 
 import Logo from "../../../public/images/apple-clock-logo.png";
@@ -14,14 +15,18 @@ import AppleStopWatchPage1 from "../../../components/apple-stopwatch-component/a
 import AppleStopWatchPage2 from "../../../components/apple-stopwatch-component/apple-stopwatch-step2";
 import AppleStopWatchPage3 from "../../../components/apple-stopwatch-component/apple-stopwatch-step3";
 import CompletePopup from "../../../components/complete-popup";
+import RecordingPopup from "../../../components/recording-popup";
 import { useRouter } from "next/navigation";
 
 const pageNum = 4;
+const TTS_TEXT =
+  "스톱워치 사용 방법을 배워보겠습니다. 화면에 보이는 어플을 찾아 실행해주세요.";
 
 export default function AppleStopWatch() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
+  const [openSound, setOpenSound] = useState(false);
   const router = useRouter();
 
   const handleNext = () => {
@@ -86,7 +91,23 @@ export default function AppleStopWatch() {
               overflow: "hidden",
             }}
           >
-            <Image src={Logo} width={150} height={150} />
+            <Button
+              onClick={() => setOpenSound(true)}
+              className="headphone-button"
+              sx={{
+                position: "absolute",
+                top: "1rem",
+                right: "1rem",
+              }}
+            >
+              <HeadphonesRoundedIcon
+                sx={{
+                  width: "3rem",
+                  height: "3rem",
+                }}
+              />
+            </Button>
+            <Image src={Logo} alt="apple-clock-logo" width={150} height={150} />
             <Typography>어플을 클릭해주세요</Typography>
             <Button
               sx={{ marginTop: "2rem" }}
@@ -122,6 +143,11 @@ export default function AppleStopWatch() {
         handleAgain={handleAgain}
         router={router}
         url={"/apple"}
+      />
+      <RecordingPopup
+        text={TTS_TEXT}
+        handleClose={() => setOpenSound(false)}
+        open={openSound}
       />
     </>
   );
