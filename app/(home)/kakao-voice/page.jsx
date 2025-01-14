@@ -5,6 +5,7 @@ import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
 import { useSwipeable } from "react-swipeable";
 
 import Logo from "../../../public/images/kakao-app-logo.png";
@@ -20,7 +21,7 @@ import { useRouter } from "next/navigation";
 
 const pageNum = 5;
 const TTS_TEXT =
-  "카카오톡에서 전화하는 방법을 배워보겠습니다. 화면에 보이는 어플을 찾아 실행해주세요.";
+  "카카오톡으로 음성메세지를 보내는 방법을 배워보겠습니다. 화면에 보이는 어플을 찾아 실행해주세요.";
 
 export default function Voice() {
   const [currPage, setCurrPage] = useState(1);
@@ -91,6 +92,22 @@ export default function Voice() {
               overflow: "hidden",
             }}
           >
+            <Button
+              onClick={() => setOpenSound(true)}
+              className="headphone-button"
+              sx={{
+                position: "absolute",
+                top: "1rem",
+                right: "1rem",
+              }}
+            >
+              <HeadphonesRoundedIcon
+                sx={{
+                  width: "3rem",
+                  height: "3rem",
+                }}
+              />
+            </Button>
             <Image src={Logo} width={150} height={150} />
             <Typography>어플을 클릭해주세요</Typography>
             <Button

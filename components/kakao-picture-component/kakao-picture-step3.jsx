@@ -26,6 +26,8 @@ export default function PicturePage3({ handleNext, handlers }) {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
+      !event.target.closest(".headphone-button") &&
+      !openSound &&
       !openModal
     ) {
       setMissclickCount((prevCount) => prevCount + 1);
