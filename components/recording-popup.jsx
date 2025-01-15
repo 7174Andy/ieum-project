@@ -72,6 +72,14 @@ export default function RecordingPopup({ text, handleClose, open }) {
     loadVoices();
   }, []);
 
+  // Update the rate when the user changes it
+  useEffect(() => {
+    if (isPlaying) {
+      handleStop(); // Stop the current playback
+      playTTS(); // Restart playback with the updated rate
+    }
+  }, [rate]);
+
   // Pause the progress bar when paused
   useEffect(() => {
     if (isPaused) {
@@ -332,8 +340,20 @@ export default function RecordingPopup({ text, handleClose, open }) {
             mt: 2,
           }}
         >
-          <PlaySpeedButton>0.5X</PlaySpeedButton>
-          <PlaySpeedButton>1X</PlaySpeedButton>
+          <PlaySpeedButton
+            onClick={() => {
+              setRate(0.5);
+            }}
+          >
+            0.5X
+          </PlaySpeedButton>
+          <PlaySpeedButton
+            onClick={() => {
+              setRate(1);
+            }}
+          >
+            1X
+          </PlaySpeedButton>
         </Box>
       </Box>
     </Modal>
