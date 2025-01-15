@@ -8,7 +8,7 @@ import { useTheme } from "@mui/material/styles";
 
 import Logo from "../../../public/images/main-character.png";
 
-export default function Financial() {
+export default function Apple() {
   const router = useRouter();
   const theme = useTheme();
 
@@ -38,7 +38,7 @@ export default function Financial() {
         >
           <Image src={Logo} alt="main-character-logo" width={80} height={80} />
           <Typography variant="h1" sx={{ fontWeight: 500 }}>
-            은행 업무
+            교통 기본
           </Typography>
         </Box>
         <Box
@@ -51,7 +51,7 @@ export default function Financial() {
           }}
         >
           <Typography>
-            아래 버튼을 통해 핸드폰으로 은행 업무하는 방법을 익혀보세요.
+            아래 버튼을 통해 교통 앱 사용 방법을 익혀보세요.
           </Typography>
         </Box>
         <Box
@@ -73,17 +73,20 @@ export default function Financial() {
             <Button variant="contained" sx={{ flex: 1 }}>
               <Typography
                 sx={{ color: "white" }}
-                onClick={() => router.push("/kakao-transfer")}
+                onClick={() => {
+                  console.log("clicked");
+                  router.push("/kakao-taxi");
+                }}
               >
-                카카오톡 이체
+                택시 부르기
               </Typography>
             </Button>
             <Button variant="contained" sx={{ flex: 1 }}>
               <Typography
                 sx={{ color: "white" }}
-                onClick={() => router.push("/kakao-divide")}
+                onClick={() => router.push("/korail")}
               >
-                카카오톡 정산
+                기차 예매하기
               </Typography>
             </Button>
           </Box>
@@ -98,17 +101,17 @@ export default function Financial() {
             <Button variant="contained" sx={{ flex: 1 }}>
               <Typography
                 sx={{ color: "white" }}
-                onClick={() => router.push("/kakaopay")}
+                onClick={() => router.push("/korail-register")}
               >
-                카카오페이 결제
+                코레일 회원가입
               </Typography>
             </Button>
             <Button variant="contained" sx={{ flex: 1 }}>
               <Typography
                 sx={{ color: "white" }}
-                onClick={() => router.push("/kakaopay-register")}
+                onClick={() => router.push("/korail-login")}
               >
-                카카오톡 계좌 등록
+                코레일 로그인
               </Typography>
             </Button>
           </Box>

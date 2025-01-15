@@ -36,7 +36,7 @@ export default function Android() {
             alignItems: "center",
           }}
         >
-          <Image src={Logo} width={80} height={80} />
+          <Image src={Logo} alt="main-character-logo" width={80} height={80} />
           <Typography variant="h1" sx={{ fontWeight: 500 }}>
             안드로이드 기본
           </Typography>
