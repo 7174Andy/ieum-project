@@ -7,20 +7,24 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useSwipeable } from "react-swipeable";
 
-import Logo from "../../../public/images/kakao-taxi-logo.png";
+import Logo from "../../../public/images/korail-logo.png";
 
 import HelpPopup from "../../../components/help-popup";
-import KakaoTaxiPage1 from "../../../components/kakao-taxi-component/kakao-taxi-step1";
-import KakaoTaxiPage2 from "../../../components/kakao-taxi-component/kakao-taxi-step2";
-import KakaoTaxiPage3 from "../../../components/kakao-taxi-component/kakao-taxi-step3";
-import KakaoTaxiPage4 from "../../../components/kakao-taxi-component/kakao-taxi-step4";
-import KakaoTaxiPage5 from "../../../components/kakao-taxi-component/kakao-taxi-step5";
-import CompletePopup from "../../../components/complete-popup";
+import KorailRegisterPage1 from "../../../components/korail-register-component/korail-register-step1";
+import KorailRegisterPage2 from "../../../components/korail-register-component/korail-register-step2";
+import KorailRegisterPage3 from "../../../components/korail-register-component/korail-register-step3";
+import KorailRegisterPage4 from "../../../components/korail-register-component/korail-register-step4";
+import KorailRegisterPage5 from "../../../components/korail-register-component/korail-register-step5";
+import KorailRegisterPage6 from "../../../components/korail-register-component/korail-register-step6";
+import KorailRegisterPage7 from "../../../components/korail-register-component/korail-register-step7";
+import KorailRegisterPage8 from "../../../components/korail-register-component/korail-register-step8";
+import KorailRegisterPage9 from "../../../components/korail-register-component/korail-register-step9";
+import KorailCompletePopup from "../../../components/korail-complete-popup";
 import { useRouter } from "next/navigation";
 
-const pageNum = 6;
+const pageNum = 10;
 
-export default function KakaoTaxi() {
+export default function KorailRegister() {
   const [currPage, setCurrPage] = useState(1);
   const [openModal, setOpenModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
@@ -110,24 +114,35 @@ export default function KakaoTaxi() {
         </Box>
       )}
       {currPage === 2 && (
-        <KakaoTaxiPage1 handleNext={handleNext} handlers={handlers} />
+        <KorailRegisterPage1 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 3 && (
-        <KakaoTaxiPage2 handleNext={handleNext} handlers={handlers} />
+        <KorailRegisterPage2 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 4 && (
-        <KakaoTaxiPage3 handleNext={handleNext} handlers={handlers} />
+        <KorailRegisterPage3 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 5 && (
-        <KakaoTaxiPage4 handleNext={handleNext} handlers={handlers} />
+        <KorailRegisterPage4 handleNext={handleNext} handlers={handlers} />
       )}
       {currPage === 6 && (
-        <KakaoTaxiPage5 handleNext={handleNext} handlers={handlers} />
+        <KorailRegisterPage5 handleNext={handleNext} handlers={handlers} />
       )}
-      <CompletePopup
+      {currPage === 7 && (
+        <KorailRegisterPage6 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 8 && (
+        <KorailRegisterPage7 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 9 && (
+        <KorailRegisterPage8 handleNext={handleNext} handlers={handlers} />
+      )}
+      {currPage === 10 && (
+        <KorailRegisterPage9 handleNext={handleNext} handlers={handlers} />
+      )}
+      <KorailCompletePopup
         handleClose={handleCloseComplete}
         open={completeModal}
-        handleAgain={handleAgain}
         router={router}
         url={"/transportation"}
       />

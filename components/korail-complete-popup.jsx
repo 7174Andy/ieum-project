@@ -9,10 +9,9 @@ import CloseIcon from "@mui/icons-material/Close";
 import Logo from "../public/images/logo.png";
 import Character from "../public/images/complete-character.png";
 
-export default function CompletePopup({
+export default function KorailCompletePopup({
   handleClose,
   open,
-  handleAgain,
   router,
   url,
 }) {
@@ -67,14 +66,21 @@ export default function CompletePopup({
             textAlign: "center",
           }}
         >
-          잘하셨습니다!
+          축하드려요!
         </Typography>
         <Typography
           id="modal-modal-description"
           variant="body1"
           sx={{ mt: 2, color: "#333", textAlign: "center" }}
         >
-          튜토리얼을 성공적으로 마치셨습니다.
+          회원가입을 성공적으로 마치셨습니다.
+        </Typography>
+        <Typography
+          id="modal-modal-description"
+          variant="body1"
+          sx={{ mt: 2, color: "#333", textAlign: "center" }}
+        >
+          로그인 진행할까요?
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
           <Image src={Character} width={100} height={100} alt="Character" />
@@ -84,17 +90,17 @@ export default function CompletePopup({
         >
           <Button
             variant="contained"
-            onClick={handleAgain}
+            onClick={() => router.push("/korail-login")}
             sx={{ color: "white" }}
           >
-            다시하기
+            예
           </Button>
           <Button
             variant="contained"
             onClick={() => router.push(url)}
             sx={{ color: "white" }}
           >
-            메뉴로
+            아니요
           </Button>
         </Box>
       </Box>
