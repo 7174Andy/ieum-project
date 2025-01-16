@@ -5,12 +5,12 @@ import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import { useTheme } from "@mui/material/styles";
 
-import Screen from "../../public/images/doctor-now-page-8.png";
+import Screen from "../../public/images/doctor-now-page-9.png";
 
 import MissClickPopup from "../miss-click-popup";
 import { glow } from "../glow";
 
-export default function DoctorNowPage8({ handleNext, handlers }) {
+export default function DoctorNowPage9({ handleNext, handlers }) {
   const theme = useTheme();
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
@@ -57,9 +57,9 @@ export default function DoctorNowPage8({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          px: "47%",
+          px: "48%",
           py: "8%",
-          bottom: "63%",
+          bottom: "0%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>
