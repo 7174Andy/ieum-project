@@ -85,6 +85,15 @@ export default function TalkPage1({ handleNext, handlers }) {
           bottom: "2%",
           left: "0%",
           animation: `${glow} 2s infinite`,
+          [theme.breakpoints.up("xl")]: {
+            left: "6%",
+          },
+          [theme.breakpoints.up("lg")]: {
+            left: "4%",
+          },
+          [theme.breakpoints.up("md")]: {
+            left: "2%",
+          },
         }}
       ></Box>
       <Button

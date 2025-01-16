@@ -51,9 +51,10 @@ export default function AppleAlarmPage4({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
+        position: "relative",
       }}
       {...handlers}
     >
@@ -82,7 +83,7 @@ export default function AppleAlarmPage4({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "6%",
           px: "8%",
-          top: "22%",
+          bottom: "73%",
           right: "1%",
           animation: `${glow} 2s infinite`,
         }}

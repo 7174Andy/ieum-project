@@ -22,7 +22,7 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
   const [openSound, setOpenSound] = useState(false);
   const [step, setStep] = useState(0);
 
-  const handleMisClick = (event) => {
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -58,7 +58,7 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -69,6 +69,7 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
         backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
+        position: "relative",
       }}
       {...handlers}
     >

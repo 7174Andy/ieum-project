@@ -73,9 +73,25 @@ export default function TalkPage2({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "11%",
           px: "10%",
-          bottom: "17%",
+          bottom: "14%",
           right: "0%",
           animation: `${glow} 2s infinite`,
+          [theme.breakpoints.up("xl")]: {
+            py: "11%",
+            px: "10%",
+            right: "6%",
+          },
+          [theme.breakpoints.up("lg")]: {
+            py: "11%",
+            px: "10%",
+            right: "6%",
+          },
+          [theme.breakpoints.down("md")]: {
+            py: "11%",
+            px: "10%",
+            right: "2%",
+            bottom: "17%",
+          },
         }}
       ></Box>
       <Button
