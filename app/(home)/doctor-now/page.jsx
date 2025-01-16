@@ -18,11 +18,10 @@ import DoctorNowPage5 from "../../../components/doctor-now-component/doctor-now-
 import DoctorNowPage6 from "../../../components/doctor-now-component/doctor-now-step6";
 import DoctorNowPage7 from "../../../components/doctor-now-component/doctor-now-step7";
 import DoctorNowPage8 from "../../../components/doctor-now-component/doctor-now-step8";
-import DoctorNowPage9 from "../../../components/doctor-now-component/doctor-now-step9";
 import CompletePopup from "../../../components/complete-popup";
 import { useRouter } from "next/navigation";
 
-const pageNum = 10;
+const pageNum = 9;
 
 export default function DoctorNow() {
   const [currPage, setCurrPage] = useState(1);
@@ -136,9 +135,6 @@ export default function DoctorNow() {
       )}
       {currPage === 9 && (
         <DoctorNowPage8 handleNext={handleNext} handlers={handlers} />
-      )}
-      {currPage === 10 && (
-        <DoctorNowPage9 handleNext={handleNext} handlers={handlers} />
       )}
       <CompletePopup
         handleClose={handleCloseComplete}
