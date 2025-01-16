@@ -88,11 +88,8 @@ export default function TalkPage1({ handleNext, handlers }) {
           [theme.breakpoints.up("xl")]: {
             left: "6%",
           },
-          [theme.breakpoints.up("lg")]: {
-            left: "4%",
-          },
           [theme.breakpoints.up("md")]: {
-            left: "2%",
+            left: "1%",
           },
         }}
       ></Box>

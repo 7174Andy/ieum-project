@@ -49,9 +49,9 @@ export default function TalkPage3({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -76,8 +76,7 @@ export default function TalkPage3({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "16%",
           px: "48%",
-          bottom: "10%",
-          right: "0",
+          bottom: "8%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>
