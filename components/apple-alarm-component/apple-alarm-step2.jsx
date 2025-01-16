@@ -66,7 +66,7 @@ export default function AppleAlarmPage2({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
       }}
@@ -97,14 +97,14 @@ export default function AppleAlarmPage2({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "23%",
           px: "48%",
-          top: "15%",
+          bottom: "60%",
           animation: `${step === 0 ? glow : ""} 2s infinite`,
         }}
       ></Box>
       <Typography
         sx={{
           position: "absolute",
-          top: "5%",
+          bottom: "85%",
           left: "20%",
           transform: "translate(-50%, 50%)",
           color: theme.palette.primary.main,
@@ -128,7 +128,7 @@ export default function AppleAlarmPage2({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "5%",
           px: "8%",
-          top: "39%",
+          bottom: "52%",
           left: "2%",
           animation: `${step === 1 ? glow : ""} 2s infinite`,
         }}
@@ -136,7 +136,7 @@ export default function AppleAlarmPage2({ handleNext, handlers }) {
       <Typography
         sx={{
           position: "absolute",
-          top: "43%",
+          bottom: "50%",
           left: "15%",
           transform: "translate(-50%, 50%)",
           color: theme.palette.primary.main,

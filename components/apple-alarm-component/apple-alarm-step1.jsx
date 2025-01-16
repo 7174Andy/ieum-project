@@ -66,7 +66,7 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
       }}
@@ -96,7 +96,7 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "7%",
-          bottom: "3%",
+          bottom: "0%",
           right: "54%",
           animation: `${step === 0 ? glow : ""} 2s infinite`,
         }}
@@ -127,7 +127,7 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "5%",
-          top: "4%",
+          bottom: "86%",
           right: "0%",
           animation: `${step === 1 ? glow : ""} 2s infinite`,
         }}
