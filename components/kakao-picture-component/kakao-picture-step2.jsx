@@ -20,7 +20,7 @@ export default function PicturePage2({ handleNext, handlers }) {
   const [openModal, setOpenModal] = useState(false);
   const [openSound, setOpenSound] = useState(false);
 
-  const handleMisClick = (event) => {
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -42,15 +42,15 @@ export default function PicturePage2({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -82,9 +82,15 @@ export default function PicturePage2({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "11%",
           px: "10%",
-          bottom: "17%",
+          bottom: "14%",
           left: "3%",
           animation: `${glow} 2s infinite`,
+          [theme.breakpoints.up("xl")]: {
+            left: "6%",
+          },
+          [theme.breakpoints.up("md")]: {
+            left: "5%",
+          },
         }}
       ></Box>
       <Button

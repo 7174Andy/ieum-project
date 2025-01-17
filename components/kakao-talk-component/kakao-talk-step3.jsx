@@ -63,9 +63,7 @@ export default function TalkPage3({ handleNext, handlers }) {
         className="headphone-button"
         sx={{ position: "absolute", top: "1rem", right: "1rem" }}
       >
-        <HeadphonesRoundedIcon
-          sx={{ width: "3rem", height: "3rem", color: "#529DAD" }}
-        />
+        <HeadphonesRoundedIcon sx={{ width: "3rem", height: "3rem" }} />
       </Button>
       <Box
         onClick={handleNext}
@@ -74,9 +72,9 @@ export default function TalkPage3({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "16%",
+          py: "14%",
           px: "48%",
-          bottom: "8%",
+          bottom: "9%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>

@@ -49,9 +49,9 @@ export default function PicturePage4({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -81,10 +81,14 @@ export default function PicturePage4({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          p: "3.5%",
-          bottom: "41%",
-          right: "-1%",
+          p: "4%",
+          bottom: "38%",
+          right: "1%",
           animation: `${glow} 2s infinite`,
+          [theme.breakpoints.up("lg")]: {
+            p: "4%",
+            right: "6%",
+          },
         }}
       ></Box>
       <Button
