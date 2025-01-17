@@ -22,7 +22,7 @@ export default function MapPage3({ handleNext, handlers }) {
   const [step, setStep] = useState(0);
   const [openSound, setOpenSound] = useState(false);
 
-  const handleMisClick = (event) => {
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -57,17 +57,17 @@ export default function MapPage3({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom",
         height: "100vh",
-        width: "97vw",
+        width: "100vw",
         position: "relative",
       }}
       {...handlers}
@@ -97,7 +97,7 @@ export default function MapPage3({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "4%",
           px: "46%",
-          bottom: "82%",
+          bottom: "88%",
           animation: `${step === 0 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
