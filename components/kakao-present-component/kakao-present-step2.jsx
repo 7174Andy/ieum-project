@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Box, Button } from "@mui/material";
 import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
 import HeadphonesRoundedIcon from "@mui/icons-material/HeadphonesRounded";
@@ -20,8 +20,20 @@ export default function PresentPage2({ handleNext, handlers }) {
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
   const [openSound, setOpenSound] = useState(false);
+  const [height, setHeight] = useState(window.innerHeight);
 
-  const handleMisClick = (event) => {
+  const elementRef = useRef(null); // Reference to the element
+
+  useEffect(() => {
+    if (elementRef.current) {
+      // Calculate and set the height of the element
+      setHeight(elementRef.current.offsetHeight);
+    }
+  }, []); // Runs once after the component mounts
+
+  console.log("height", height);
+
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -43,7 +55,7 @@ export default function PresentPage2({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -51,7 +63,7 @@ export default function PresentPage2({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "top",
+        backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -82,7 +94,7 @@ export default function PresentPage2({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "4%",
-          top: "2%",
+          bottom: "815px",
           right: "10%",
           animation: `${glow} 2s infinite`,
           [theme.breakpoints.up("lg")]: {

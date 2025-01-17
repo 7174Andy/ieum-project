@@ -21,7 +21,7 @@ export default function PresentPage1({ handleNext, handlers }) {
   const [openModal, setOpenModal] = useState(false);
   const [openSound, setOpenSound] = useState(false);
 
-  const handleMisClick = (event) => {
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -43,7 +43,7 @@ export default function PresentPage1({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -82,9 +82,25 @@ export default function PresentPage1({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "7%",
-          bottom: "49%",
+          bottom: "52%",
           left: "4%",
           animation: `${glow} 2s infinite`,
+          [theme.breakpoints.up("sm")]: {
+            bottom: "53%",
+            left: "4%",
+          },
+          [theme.breakpoints.up("md")]: {
+            bottom: "57%",
+            left: "4%",
+          },
+          [theme.breakpoints.up("lg")]: {
+            bottom: "57%",
+            left: "6%",
+          },
+          [theme.breakpoints.up("xl")]: {
+            bottom: "58%",
+            left: "7%",
+          },
         }}
       ></Box>
       <Button

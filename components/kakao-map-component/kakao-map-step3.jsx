@@ -63,9 +63,9 @@ export default function MapPage3({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -97,7 +97,7 @@ export default function MapPage3({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "4%",
           px: "46%",
-          top: "7%",
+          bottom: "82%",
           animation: `${step === 0 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
@@ -128,7 +128,7 @@ export default function MapPage3({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "7%",
           px: "49%",
-          bottom: "14%",
+          bottom: "13%",
           animation: `${step === 1 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
