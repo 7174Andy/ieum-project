@@ -72,7 +72,7 @@ export default function SavePage1({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          py: "16%",
+          py: "18%",
           px: "35%",
           bottom: "10%",
           right: "1%",

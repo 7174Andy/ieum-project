@@ -76,6 +76,12 @@ export default function SavePage2({ handleNext, handlers }) {
           bottom: "3%",
           left: "0%",
           animation: `${glow} 2s infinite`,
+          [theme.breakpoints.up("sm")]: {
+            left: "2%",
+          },
+          [theme.breakpoints.up("md")]: {
+            left: "0%",
+          },
         }}
       ></Box>
       <Button
