@@ -83,7 +83,7 @@ export default function PresentPage1({ handleNext, handlers }) {
           borderRadius: "12px",
           p: "7%",
           bottom: "58%",
-          left: "0%",
+          left: "1%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>
