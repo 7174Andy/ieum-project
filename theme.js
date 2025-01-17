@@ -60,5 +60,14 @@ export const createCustomTheme = (fontSize) => {
         fontWeight: 500,
       },
     },
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 360, // Galaxy small
+        md: 390, // iPhone base
+        lg: 412, // Galaxy large
+        xl: 428, // iPhone Pro Max
+      },
+    },
   });
 };
