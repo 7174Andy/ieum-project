@@ -43,7 +43,7 @@ export default function DoctorNowPage5({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "bottom",
+        backgroundPosition: "top",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -59,7 +59,7 @@ export default function DoctorNowPage5({ handleNext, handlers }) {
           borderRadius: "12px",
           px: "48%",
           py: "17%",
-          bottom: "43%",
+          top: "25%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>

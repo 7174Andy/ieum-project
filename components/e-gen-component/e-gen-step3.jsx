@@ -43,9 +43,9 @@ export default function EGenPage3({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "bottom",
+        backgroundPosition: "top",
         height: "100vh",
-        width: "97vw",
+        width: "100vw",
         position: "relative",
       }}
       {...handlers}
@@ -59,7 +59,7 @@ export default function EGenPage3({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "5%",
           px: "12%",
-          bottom: "40%",
+          top: "32%",
           left: "3%",
           animation: `${glow} 2s infinite`,
         }}

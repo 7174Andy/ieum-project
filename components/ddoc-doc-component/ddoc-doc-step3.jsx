@@ -56,7 +56,7 @@ export default function DdocDocPage3({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom",
         height: "100vh",
@@ -73,8 +73,8 @@ export default function DdocDocPage3({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "4%",
-          bottom: "66%",
-          left: "2%",
+          bottom: "68%",
+          left: "1%",
           animation: `${step === 0 ? glow : ""} 2s infinite`,
         }}
       ></Box>
