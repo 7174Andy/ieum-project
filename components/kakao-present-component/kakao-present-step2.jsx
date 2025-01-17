@@ -20,18 +20,6 @@ export default function PresentPage2({ handleNext, handlers }) {
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
   const [openSound, setOpenSound] = useState(false);
-  const [height, setHeight] = useState(window.innerHeight);
-
-  const elementRef = useRef(null); // Reference to the element
-
-  useEffect(() => {
-    if (elementRef.current) {
-      // Calculate and set the height of the element
-      setHeight(elementRef.current.offsetHeight);
-    }
-  }, []); // Runs once after the component mounts
-
-  console.log("height", height);
 
   const handleMissClick = (event) => {
     if (
@@ -63,7 +51,7 @@ export default function PresentPage2({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "bottom",
+        backgroundPosition: "top",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -94,7 +82,7 @@ export default function PresentPage2({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "4%",
-          bottom: "815px",
+          top: "2%",
           right: "10%",
           animation: `${glow} 2s infinite`,
           [theme.breakpoints.up("lg")]: {
