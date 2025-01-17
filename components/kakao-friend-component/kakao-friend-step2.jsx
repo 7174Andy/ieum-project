@@ -51,7 +51,7 @@ export default function FriendPage2({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "top",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -84,7 +84,7 @@ export default function FriendPage2({ handleNext, handlers }) {
           py: "4%",
           px: "5%",
           top: "35%",
-          right: "1%",
+          right: "2%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>

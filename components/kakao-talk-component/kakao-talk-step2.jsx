@@ -48,9 +48,9 @@ export default function TalkPage2({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -73,9 +73,19 @@ export default function TalkPage2({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "11%",
           px: "10%",
-          bottom: "17%",
-          right: "0%",
+          bottom: "15%",
+          right: "5%",
           animation: `${glow} 2s infinite`,
+          [theme.breakpoints.up("xl")]: {
+            py: "11%",
+            px: "10%",
+            right: "6%",
+          },
+          [theme.breakpoints.up("md")]: {
+            py: "11%",
+            px: "10%",
+            right: "5%",
+          },
         }}
       ></Box>
       <Button

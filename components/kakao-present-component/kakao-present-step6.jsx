@@ -56,9 +56,9 @@ export default function PresentPage6({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -75,7 +75,6 @@ export default function PresentPage6({ handleNext, handlers }) {
           py: "10%",
           px: "45%",
           bottom: "20%",
-          right: "2%",
           animation: `${step === 0 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
@@ -106,8 +105,7 @@ export default function PresentPage6({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "6%",
           px: "49%",
-          bottom: "2%",
-          right: "0",
+          bottom: "3%",
           animation: `${step === 1 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>

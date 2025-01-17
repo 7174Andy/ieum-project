@@ -21,7 +21,7 @@ export default function PicturePage4({ handleNext, handlers }) {
   const [openModal, setOpenModal] = useState(false);
   const [openSound, setOpenSound] = useState(false);
 
-  const handleMisClick = (event) => {
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -43,7 +43,7 @@ export default function PicturePage4({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -51,9 +51,9 @@ export default function PicturePage4({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
         height: "100vh",
-        width: "97vw",
+        width: "100vw",
         position: "relative",
       }}
       {...handlers}
@@ -81,10 +81,11 @@ export default function PicturePage4({ handleNext, handlers }) {
           position: "absolute",
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
-          p: "3.5%",
-          bottom: "41%",
-          right: "-1%",
+          p: "4%",
+          bottom: "40%",
+          right: "0%",
           animation: `${glow} 2s infinite`,
+          aspectRatio: 1,
         }}
       ></Box>
       <Button
