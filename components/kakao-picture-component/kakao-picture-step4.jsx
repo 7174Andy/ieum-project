@@ -21,7 +21,7 @@ export default function PicturePage4({ handleNext, handlers }) {
   const [openModal, setOpenModal] = useState(false);
   const [openSound, setOpenSound] = useState(false);
 
-  const handleMisClick = (event) => {
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -43,7 +43,7 @@ export default function PicturePage4({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -85,6 +85,7 @@ export default function PicturePage4({ handleNext, handlers }) {
           bottom: "38%",
           right: "1%",
           animation: `${glow} 2s infinite`,
+          aspectRatio: 1,
           [theme.breakpoints.up("lg")]: {
             p: "4%",
             right: "6%",

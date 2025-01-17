@@ -97,7 +97,7 @@ export default function PicturePage3({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "3%",
-          bottom: "26%",
+          bottom: "27%",
           left: "31%",
           animation: `${steps === 0 ? `${glow} 2s infinite` : "none"}`,
         }}
@@ -128,8 +128,8 @@ export default function PicturePage3({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "3%",
-          bottom: "26%",
-          right: "16%",
+          bottom: "27%",
+          right: "17%",
           animation: `${steps === 1 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
@@ -137,7 +137,7 @@ export default function PicturePage3({ handleNext, handlers }) {
         sx={{
           position: "absolute",
           bottom: "28%",
-          right: "15%",
+          right: "19%",
           transform: "translate(-50%, 50%)",
           color: theme.palette.primary.main,
           fontWeight: "bold",
