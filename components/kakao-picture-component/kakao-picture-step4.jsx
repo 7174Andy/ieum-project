@@ -49,11 +49,11 @@ export default function PicturePage4({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom",
         height: "100vh",
-        width: "97vw",
+        width: "100vw",
         position: "relative",
       }}
       {...handlers}
@@ -82,14 +82,10 @@ export default function PicturePage4({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "4%",
-          bottom: "38%",
-          right: "1%",
+          bottom: "40%",
+          right: "0%",
           animation: `${glow} 2s infinite`,
           aspectRatio: 1,
-          [theme.breakpoints.up("lg")]: {
-            p: "4%",
-            right: "6%",
-          },
         }}
       ></Box>
       <Button

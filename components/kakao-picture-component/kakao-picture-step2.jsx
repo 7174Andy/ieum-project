@@ -48,11 +48,11 @@ export default function PicturePage2({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom",
         height: "100vh",
-        width: "97vw",
+        width: "100vw",
         position: "relative",
       }}
       {...handlers}
@@ -82,15 +82,9 @@ export default function PicturePage2({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "11%",
           px: "10%",
-          bottom: "14%",
-          left: "3%",
+          bottom: "18%",
+          left: "1%",
           animation: `${glow} 2s infinite`,
-          [theme.breakpoints.up("xl")]: {
-            left: "6%",
-          },
-          [theme.breakpoints.up("md")]: {
-            left: "5%",
-          },
         }}
       ></Box>
       <Button

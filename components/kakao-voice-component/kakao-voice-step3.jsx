@@ -52,7 +52,7 @@ export default function VoicePage3({ handleNext, handlers }) {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom",
         height: "100vh",
-        width: "97vw",
+        width: "100vw",
         position: "relative",
       }}
       {...handlers}

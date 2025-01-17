@@ -53,7 +53,7 @@ export default function VoicePage2({ handleNext, handlers }) {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom",
         height: "100vh",
-        width: "97vw",
+        width: "100vw",
         position: "relative",
       }}
       {...handlers}
@@ -86,6 +86,16 @@ export default function VoicePage2({ handleNext, handlers }) {
           bottom: "13%",
           right: "5%",
           animation: `${glow} 2s infinite`,
+          [theme.breakpoints.up("xl")]: {
+            py: "11%",
+            px: "10%",
+            right: "6%",
+          },
+          [theme.breakpoints.up("md")]: {
+            py: "11%",
+            px: "10%",
+            right: "5%",
+          },
         }}
       ></Box>
       <Button
