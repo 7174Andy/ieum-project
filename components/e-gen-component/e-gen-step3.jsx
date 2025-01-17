@@ -62,6 +62,14 @@ export default function EGenPage3({ handleNext, handlers }) {
           top: "32%",
           left: "3%",
           animation: `${glow} 2s infinite`,
+          [theme.breakpoints.up("sm")]: {
+            top: "35%",
+            left: "3%",
+          },
+          [theme.breakpoints.up("md")]: {
+            top: "40%",
+            left: "3%",
+          },
         }}
       ></Box>
       <Button
