@@ -77,7 +77,7 @@ export default function DdocDocPage3({ handleNext, handlers }) {
           left: "1%",
           animation: `${step === 0 ? glow : ""} 2s infinite`,
           [theme.breakpoints.down("md")]: {
-            left: "3%",
+            left: "5%",
           },
         }}
       ></Box>
