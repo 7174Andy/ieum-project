@@ -85,6 +85,9 @@ export default function PresentPage2({ handleNext, handlers }) {
           top: "2%",
           right: "10%",
           animation: `${glow} 2s infinite`,
+          [theme.breakpoints.up("lg")]: {
+            right: "11%",
+          },
         }}
       ></Box>
       <Button
