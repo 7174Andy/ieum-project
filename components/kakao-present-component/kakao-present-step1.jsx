@@ -49,11 +49,11 @@ export default function PresentPage1({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom",
         height: "100vh",
-        width: "97vw",
+        width: "100vw",
         position: "relative",
       }}
       {...handlers}
@@ -82,25 +82,9 @@ export default function PresentPage1({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "7%",
-          bottom: "52%",
-          left: "4%",
+          bottom: "58%",
+          left: "0%",
           animation: `${glow} 2s infinite`,
-          [theme.breakpoints.up("sm")]: {
-            bottom: "53%",
-            left: "4%",
-          },
-          [theme.breakpoints.up("md")]: {
-            bottom: "57%",
-            left: "4%",
-          },
-          [theme.breakpoints.up("lg")]: {
-            bottom: "57%",
-            left: "6%",
-          },
-          [theme.breakpoints.up("xl")]: {
-            bottom: "58%",
-            left: "7%",
-          },
         }}
       ></Box>
       <Button

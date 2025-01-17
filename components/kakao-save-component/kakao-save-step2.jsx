@@ -49,11 +49,11 @@ export default function SavePage2({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "bottom",
         height: "100vh",
-        width: "97vw",
+        width: "100vw",
         position: "relative",
       }}
       {...handlers}
@@ -73,15 +73,9 @@ export default function SavePage2({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "5%",
-          bottom: "3%",
+          bottom: "4%",
           left: "0%",
           animation: `${glow} 2s infinite`,
-          [theme.breakpoints.up("sm")]: {
-            left: "2%",
-          },
-          [theme.breakpoints.up("md")]: {
-            left: "0%",
-          },
         }}
       ></Box>
       <Button
