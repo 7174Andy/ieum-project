@@ -22,7 +22,7 @@ export default function AndroidCalendarStep4({ handleNext, handlers }) {
   const [step, setStep] = useState(0);
   const [openSound, setOpenSound] = useState(false);
 
-  const handleMisClick = (event) => {
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -58,7 +58,7 @@ export default function AndroidCalendarStep4({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",
