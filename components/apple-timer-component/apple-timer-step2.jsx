@@ -64,11 +64,12 @@ export default function AppleTimerPage2({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         height: "100vh",
         width: "97vw",
+        position: "relative",
       }}
       {...handlers}
     >
@@ -128,7 +129,7 @@ export default function AppleTimerPage2({ handleNext, handlers }) {
           borderRadius: "12px",
           p: "8%",
           top: "38%",
-          right: "3%",
+          right: "0%",
           animation: `${step === 1 ? glow : ""} 2s infinite`,
         }}
       ></Box>
