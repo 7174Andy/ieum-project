@@ -22,7 +22,7 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
   const [openSound, setOpenSound] = useState(false);
   const [step, setStep] = useState(0);
 
-  const handleMisClick = (event) => {
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -58,7 +58,7 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -69,6 +69,7 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
         backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
+        position: "relative",
       }}
       {...handlers}
     >
@@ -97,15 +98,15 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
           borderRadius: "12px",
           p: "7%",
           bottom: "0%",
-          right: "54%",
+          right: "56%",
           animation: `${step === 0 ? glow : ""} 2s infinite`,
         }}
       ></Box>
       <Typography
         sx={{
           position: "absolute",
-          bottom: "14%",
-          left: "20%",
+          bottom: "10%",
+          left: "22%",
           transform: "translate(-50%, 50%)",
           color: theme.palette.primary.main,
           fontWeight: "bold",
@@ -127,7 +128,7 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "5%",
-          bottom: "86%",
+          top: "0%",
           right: "0%",
           animation: `${step === 1 ? glow : ""} 2s infinite`,
         }}

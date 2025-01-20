@@ -51,9 +51,10 @@ export default function AppleTimerPage3({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "top",
         height: "100vh",
         width: "97vw",
+        position: "relative",
       }}
       {...handlers}
     >
@@ -81,7 +82,7 @@ export default function AppleTimerPage3({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "13%",
           px: "48%",
-          top: "10%",
+          top: "7%",
         }}
       ></Box>
 
@@ -93,7 +94,7 @@ export default function AppleTimerPage3({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "8%",
-          top: "11%",
+          top: "9%",
           right: "5%",
           animation: `${glow} 2s infinite`,
         }}

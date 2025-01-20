@@ -50,9 +50,10 @@ export default function AppleTimerPage4({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "top",
         height: "100vh",
         width: "97vw",
+        position: "relative",
       }}
       {...handlers}
     >
@@ -80,8 +81,8 @@ export default function AppleTimerPage4({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "8%",
-          top: "11%",
-          right: "2%",
+          top: "9%",
+          right: "1%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>

@@ -47,11 +47,12 @@ export default function AppleStopWatchPage2({ handleNext, handlers }) {
         flexDirection: "column",
         alignItems: "center",
         backgroundImage: `url(${Screen.src})`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         height: "100vh",
         width: "97vw",
+        position: "relative",
       }}
       {...handlers}
     >
@@ -79,8 +80,8 @@ export default function AppleStopWatchPage2({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "9%",
-          top: "44%",
-          right: "3%",
+          top: "43%",
+          right: "1%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>

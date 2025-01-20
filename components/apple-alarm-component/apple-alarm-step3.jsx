@@ -14,7 +14,7 @@ export default function AppleAlarmPage3({ handleNext, handlers }) {
   const [missClicksCount, setMissclickCount] = useState(0);
   const [openModal, setOpenModal] = useState(false);
 
-  const handleMisClick = (event) => {
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -34,7 +34,7 @@ export default function AppleAlarmPage3({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -45,6 +45,7 @@ export default function AppleAlarmPage3({ handleNext, handlers }) {
         backgroundPosition: "center",
         height: "100vh",
         width: "97vw",
+        position: "relative",
       }}
       {...handlers}
     >
