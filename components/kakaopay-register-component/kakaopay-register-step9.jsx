@@ -16,7 +16,7 @@ export default function RegisterPage9({ handleNext, handlers }) {
   const [openModal, setOpenModal] = useState(false);
   const [step, setStep] = useState(0);
 
-  const handleMisClick = (event) => {
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -54,7 +54,7 @@ export default function RegisterPage9({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",

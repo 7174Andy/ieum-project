@@ -21,7 +21,7 @@ export default function AndroidTimerPage5({ handleNext, handlers }) {
   const [openModal, setOpenModal] = useState(false);
   const [openSound, setOpenSound] = useState(false);
 
-  const handleMisClick = (event) => {
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -43,7 +43,7 @@ export default function AndroidTimerPage5({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -51,9 +51,9 @@ export default function AndroidTimerPage5({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
         height: "100vh",
-        width: "97vw",
+        width: "100vw",
         position: "relative",
       }}
       {...handlers}
@@ -84,7 +84,7 @@ export default function AndroidTimerPage5({ handleNext, handlers }) {
           py: "8%",
           px: "17%",
           right: "10%",
-          bottom: "25%",
+          bottom: "14%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>

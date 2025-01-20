@@ -22,7 +22,7 @@ export default function AndroidAlarmPage3({ handleNext, handlers }) {
   const [step, setStep] = useState(0);
   const [openSound, setOpenSound] = useState(false);
 
-  const handleMisClick = (event) => {
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -58,7 +58,7 @@ export default function AndroidAlarmPage3({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -66,7 +66,7 @@ export default function AndroidAlarmPage3({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -98,14 +98,14 @@ export default function AndroidAlarmPage3({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "25%",
           px: "43%",
-          top: "17%",
+          bottom: "52%",
           animation: `${step === 0 ? `${glow} 2s infinite` : "none"}`,
         }}
       ></Box>
       <Typography
         sx={{
           position: "absolute",
-          top: "10%",
+          top: "16%",
           right: "0%",
           transform: "translate(-50%, 50%)",
           color: theme.palette.primary.main,
@@ -129,7 +129,7 @@ export default function AndroidAlarmPage3({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "8%",
           px: "20%",
-          bottom: "10%",
+          bottom: "0%",
           right: "10%",
           animation: `${step === 1 ? `${glow} 2s infinite` : "none"}`,
         }}
@@ -137,7 +137,7 @@ export default function AndroidAlarmPage3({ handleNext, handlers }) {
       <Typography
         sx={{
           position: "absolute",
-          bottom: "20%",
+          bottom: "12%",
           right: "0%",
           transform: "translate(-50%, 50%)",
           color: theme.palette.primary.main,

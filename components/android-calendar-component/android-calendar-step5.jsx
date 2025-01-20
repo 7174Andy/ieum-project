@@ -50,7 +50,7 @@ export default function AndroidAlarmPage5({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -83,7 +83,7 @@ export default function AndroidAlarmPage5({ handleNext, handlers }) {
           py: "6%",
           px: "20%",
           right: "10%",
-          bottom: "12%",
+          bottom: "1%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>

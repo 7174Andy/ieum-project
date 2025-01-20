@@ -21,7 +21,7 @@ export default function AndroidMemoPage8({ handleNext, handlers }) {
   const [openModal, setOpenModal] = useState(false);
   const [openSound, setOpenSound] = useState(false);
 
-  const handleMisClick = (event) => {
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -43,7 +43,7 @@ export default function AndroidMemoPage8({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -51,7 +51,7 @@ export default function AndroidMemoPage8({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "top",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -82,7 +82,7 @@ export default function AndroidMemoPage8({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "4%",
-          top: "41%",
+          top: "32%",
           left: "6%",
           animation: `${glow} 2s infinite`,
         }}
