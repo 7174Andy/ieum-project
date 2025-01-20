@@ -26,7 +26,7 @@ export default function AppleAlarmPage4({ handleNext, handlers }) {
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
       !event.target.closest(".headphone-button") &&
-      !soundOpen &&
+      !openSound &&
       !openModal
     ) {
       setMissclickCount((prevCount) => prevCount + 1);
@@ -51,7 +51,7 @@ export default function AppleAlarmPage4({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "top",
         height: "100vh",
         width: "97vw",
       }}
@@ -82,9 +82,12 @@ export default function AppleAlarmPage4({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "6%",
           px: "8%",
-          top: "22%",
+          top: "20%",
           right: "1%",
           animation: `${glow} 2s infinite`,
+          [theme.breakpoints.up("md")]: {
+            right: "2%",
+          },
         }}
       ></Box>
       <Button
