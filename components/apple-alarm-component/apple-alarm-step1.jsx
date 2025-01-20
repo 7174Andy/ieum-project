@@ -98,7 +98,7 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
           borderRadius: "12px",
           p: "7%",
           bottom: "0%",
-          right: "54%",
+          right: "56%",
           animation: `${step === 0 ? glow : ""} 2s infinite`,
         }}
       ></Box>
@@ -128,7 +128,7 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "5%",
-          bottom: "86%",
+          top: "0%",
           right: "0%",
           animation: `${step === 1 ? glow : ""} 2s infinite`,
         }}
