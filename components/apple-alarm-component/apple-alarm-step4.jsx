@@ -54,6 +54,7 @@ export default function AppleAlarmPage4({ handleNext, handlers }) {
         backgroundPosition: "top",
         height: "100vh",
         width: "97vw",
+        position: "relative",
       }}
       {...handlers}
     >
