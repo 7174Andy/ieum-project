@@ -52,7 +52,7 @@ export default function AndroidAlarmPage1({ handleNext, handlers }) {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         height: "100vh",
-        width: "97vw",
+        width: "100vw",
         position: "relative",
       }}
       {...handlers}
