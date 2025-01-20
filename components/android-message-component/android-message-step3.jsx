@@ -21,7 +21,7 @@ export default function AndroidMessagePage3({ handleNext, handlers }) {
   const [openModal, setOpenModal] = useState(false);
   const [openSound, setOpenSound] = useState(false);
 
-  const handleMisClick = (event) => {
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -43,7 +43,7 @@ export default function AndroidMessagePage3({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -51,7 +51,7 @@ export default function AndroidMessagePage3({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "top",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -83,7 +83,7 @@ export default function AndroidMessagePage3({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "7%",
           px: "42%",
-          top: "23%",
+          top: "12%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>
