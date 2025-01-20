@@ -21,7 +21,7 @@ export default function AndroidAlarmPage4({ handleNext, handlers }) {
   const [openModal, setOpenModal] = useState(false);
   const [openSound, setOpenSound] = useState(false);
 
-  const handleMisClick = (event) => {
+  const handleMissClick = (event) => {
     if (
       !event.target.closest(".clickable-box") &&
       !event.target.closest(".arrow-button") &&
@@ -43,7 +43,7 @@ export default function AndroidAlarmPage4({ handleNext, handlers }) {
 
   return (
     <Box
-      onClick={handleMisClick}
+      onClick={handleMissClick}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -51,7 +51,7 @@ export default function AndroidAlarmPage4({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "top",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -81,7 +81,7 @@ export default function AndroidAlarmPage4({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "5%",
-          top: "16%",
+          top: "5%",
           right: "16%",
         }}
       ></Box>
@@ -93,7 +93,7 @@ export default function AndroidAlarmPage4({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "15%",
           px: "48%",
-          top: "24%",
+          top: "14%",
         }}
       ></Box>
       <Box
@@ -105,7 +105,7 @@ export default function AndroidAlarmPage4({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "5%",
           px: "8%",
-          top: "29%",
+          top: "18%",
           right: "5%",
           animation: `${glow} 2s infinite`,
         }}
