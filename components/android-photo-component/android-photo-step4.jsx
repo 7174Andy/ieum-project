@@ -51,7 +51,7 @@ export default function AndroidPhotoPage4({ handleNext, handlers }) {
         backgroundImage: `url(${Screen.src})`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
         height: "100vh",
         width: "97vw",
         position: "relative",
@@ -83,7 +83,7 @@ export default function AndroidPhotoPage4({ handleNext, handlers }) {
           borderRadius: "12px",
           py: "15%",
           px: "25%",
-          bottom: "28%",
+          bottom: "18%",
           left: "10%",
           animation: `${glow} 2s infinite`,
         }}
@@ -96,7 +96,7 @@ export default function AndroidPhotoPage4({ handleNext, handlers }) {
           border: `5px solid ${theme.palette.primary.main}`,
           borderRadius: "12px",
           p: "8%",
-          bottom: "12%",
+          bottom: "1%",
           animation: `${glow} 2s infinite`,
         }}
       ></Box>
