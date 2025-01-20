@@ -105,8 +105,8 @@ export default function AppleAlarmPage1({ handleNext, handlers }) {
       <Typography
         sx={{
           position: "absolute",
-          bottom: "14%",
-          left: "20%",
+          bottom: "10%",
+          left: "22%",
           transform: "translate(-50%, 50%)",
           color: theme.palette.primary.main,
           fontWeight: "bold",
